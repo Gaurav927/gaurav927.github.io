@@ -5,5 +5,4 @@ permalink: /bayesian-optimization/
 ---
 
 # Bayesian Optimization
-
-Content of the page...
+Let's go into depth of Bayesian Optimization
