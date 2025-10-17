@@ -8,6 +8,6 @@ In this blog, I am going to use simulation for solving famous probability questi
 
 ## Estimate the value of pi
 
-## 
+## Three points are chosen on the unit circle. What is the probability that the origin lies inside the triangle determined by the four points?
 
 
