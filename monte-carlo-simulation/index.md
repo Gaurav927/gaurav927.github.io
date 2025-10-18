@@ -27,15 +27,6 @@ Its a two step process
 
 ## If a stick is broken at random points, what is the expected length of smaller one, ratio of bigger/smaller?
 
-## A railroads number it's locamotive in order 1, 2, .... N, One day we see a locomotive 60, Guess the number of locomotives company has?
-
-It is confirmed that, the number of locomotive or the value of N is atleast 60 (since we have a visual proof of this). It might happen there are 
-total 60 locomotives and we saw the 60th one
-
-the accepted range of N in based on visual proof is (60, 61, .... inf)
-
-E[number of locomotives] = 60* P(60 locomotives) + 61* P(61 locomotives and we saw the 60th one) + 
-
 
 
 
