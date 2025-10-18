@@ -1,6 +1,15 @@
 # Monte - Carlo Simulation
 
 In this blog, I am going to use simulation for solving famous probability question.
+We are going to use python's random number generator to solve the question.
+
+Its a two step process
+
+* Generate the sample *
+* Count the relevent samples *
+
+```
+```
 
 ## The Famous Monte-Hall Problem
 
