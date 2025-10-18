@@ -15,7 +15,7 @@ Its a two step process
 
 ## The expected distance between two points randomly sampled inside a unit square
 
-## Estimate the value of pi
+## Estimate the value of pi, euler's number (e)
 
 ## Three points are chosen on the unit circle. What is the probability that the origin lies inside the triangle determined by the three points?
 
