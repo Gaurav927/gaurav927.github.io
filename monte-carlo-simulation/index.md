@@ -13,6 +13,8 @@ Its a two step process
 
 ## The Famous Monte-Hall Problem
 
+## One hundred people line up to board an airplane. Each has a boarding pass withassigned seat. However, the first person to board has lost his boarding pass and takes a random seat. After that, each person takes the assigned seat if it is unoccupied, and one of unoccupied seats at random otherwise. What is the probability that the last person to board gets to sit in his assigned seat?
+
 ## The expected distance between two points randomly sampled inside a unit square
 
 ## Estimate the value of pi, euler's number (e)
@@ -24,3 +26,5 @@ Its a two step process
 ## N letters are randomly put into envelops, On an average how many letters are put into its own envelop?
 
 ## If a stick is broken at random points, what is the expected length of smaller one, ratio of bigger/smaller?
+
+## If a rail
