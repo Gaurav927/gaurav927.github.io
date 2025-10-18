@@ -5,8 +5,8 @@ We are going to use python's random number generator to solve the question.
 
 Its a two step process
 
-* Generate the sample *
-* Count the relevent samples *
+* Generate the sample 
+* Count the relevent samples 
 
 ```
 ```
