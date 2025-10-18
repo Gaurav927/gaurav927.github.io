@@ -17,7 +17,7 @@ Its a two step process
 
 ## Estimate the value of pi
 
-## Three points are chosen on the unit circle. What is the probability that the origin lies inside the triangle determined by the four points?
+## Three points are chosen on the unit circle. What is the probability that the origin lies inside the triangle determined by the three points?
 
 ## What is the probability that a random chord length is greater than radius?
 
