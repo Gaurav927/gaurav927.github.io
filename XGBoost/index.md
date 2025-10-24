@@ -24,8 +24,8 @@ Loss function \
 $L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)$ \
 $\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
 
-where
-L(ϕ) is the regularized objective function to minimize.
-
-$\hat{y_i}$ is prediction from the boosting model
+where \
+L(ϕ) is the regularized objective function to minimize. \
+$\hat{y_i}$ is prediction from the boosting model \
+$y_i$ is actual label of the data 
 
