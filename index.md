@@ -12,3 +12,4 @@ Welcome to my blog! Click a topic below:
 - [Dragon Net]({{ site.baseurl }}/dragon-net/)
 - [PyTorch from Scratch]({{ site.baseurl }}/pytorch-from-scratch/)
 - [Optimization Algorithms from Scratch]({{ site.baseurl }}/optimization-from-scratch/)
+- [XGBoost]({{ site.baseurl }}/XGBoost/)
