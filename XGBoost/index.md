@@ -27,4 +27,7 @@ where
 
 $\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
 
+L(ϕ) is the regularized objective function to minimize.
+
+$\hat{y_i}$ is prediction from the boosting model
 
