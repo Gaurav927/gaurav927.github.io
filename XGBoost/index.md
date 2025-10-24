@@ -33,3 +33,5 @@ $y_i$ is actual label of the data \
 T is the number of leaves in the tree \
 $w_i$ to represent score on i-th leaf
 
+Note: We have a regularisation on the number of leaves for each Tree and the scores associated with it, but no regularisation on number of tree
+
