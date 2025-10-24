@@ -39,7 +39,10 @@ When we set regularisation term to 0, it falls back to traditional gradient tree
 ### Gradient Tree Boosting
 Let $f_{k}$ be kth tree that we are fitting in a sequential manner. The loss function for $f_{k}$ can be written as \
 \
-$L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_i)) + \Omega(f_t)$
+\[
+L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})
+\]
+
 
 
 
