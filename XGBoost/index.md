@@ -26,6 +26,7 @@ $\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
 
 where \
 L(ϕ) is the regularized objective function to minimize. \
+$l(\hat{y_i}, y_i)$ is usually a convex function \
 $\hat{y_i}$ is prediction from the boosting model \
 $y_i$ is actual label of the data \
 Ω penalizes the complexity of the model \
