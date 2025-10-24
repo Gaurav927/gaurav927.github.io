@@ -1,3 +1,11 @@
 theme: jekyll-theme-minimal
 title: ML Blogs
 description: Bookmark this to keep an eye on my project updates!
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    disable: true
+
