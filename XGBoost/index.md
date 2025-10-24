@@ -30,5 +30,5 @@ $\hat{y_i}$ is prediction from the boosting model \
 $y_i$ is actual label of the data \
 Ω penalizes the complexity of the model \
 T is the number of leaves in the tree \
-w_i to represent score on i-th leaf
+$w_i$ to represent score on i-th leaf
 
