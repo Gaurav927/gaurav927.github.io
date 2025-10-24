@@ -17,7 +17,7 @@ $D = \{(x_i, y_i)\} \quad (|D| = n, \quad x_i \in \mathbb{R}^m, \quad y_i \in \m
 
 
 $$
-hat{y_i} = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
+\hat{y_i} = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
 $$
 
 Loss function \
