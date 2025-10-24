@@ -10,3 +10,8 @@ Here is link of the paper for the reference: [XGBoost: A Scalable Tree Boosting 
 We will first review 
 1. Tree boosting and introduce a regularized objective
 2. We then describe the split finding methods as well as the system design
+
+### Fundamentals of tree boosting
+
+\[ y_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F} \]
+
