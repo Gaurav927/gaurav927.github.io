@@ -38,10 +38,67 @@ When we set regularisation term to 0, it falls back to traditional gradient tree
 
 ### Gradient Tree Boosting
 Let $f_{k}$ be kth tree that we are fitting in a sequential manner. The loss function for $f_{k}$ can be written as \
-\
-\[
-L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})
-\]
+
+$L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})$
+
+Using taylor's series 2nd order approximation, expanding $l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))$ -------- eqn(1)
+
+For any f(x, y + h), where h is delta change the taylors series can be written as \
+
+$f(x, y + h) \approx f(x, y) + \frac{\partial f(x, y)}{\partial y} h + \frac{1}{2} \frac{\partial^2 f(x, y)}{\partial y^2} h^2$ ---- eqn(2)
+
+comparing (1) and (2)
+x = $y_i$, y = $\hat{y}_{i}^{(t-1)}$ and h = $f_{t}(x_{i})$
+
+$l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))$
+
+= $l(y_{i}, \hat{y}_{i}^{(t-1)}) + \frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}} f_{t}(x_{i}) + \frac{1}{2}\frac{\partial^2 f(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2} f_{t}(x_{i})^2$
+
+Rewriting $g_{i}$ = $\frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}}$ and $h_{i}$ = $\frac{\partial^2 f(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2}$
+
+the loss can be rewritten as: 
+
+= $l(y_{i}, \hat{y}_{i}^{(t-1)}) + g_{i} f_{t}(x_{i}) +  h_{i} f_{t}(x_{i})^2$
+
+
+$L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i) \right] + \Omega(f_t)$
+
+
+$$
+\begin{align*}
+\tilde{\mathcal{L}}^{(t)} &= \sum_{i=1}^{n} \left[ g_i f_t(\mathbf{x}_i) + \frac{1}{2} h_i f_t^2(\mathbf{x}_i) \right] + \gamma T + \frac{1}{2} \lambda \sum_{j=1}^{T} w_j^2 \\
+&= \sum_{j=1}^{T} \left[ \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) w_j^2 \right] + \gamma T
+\end{align*}
+$$
+
+$$
+= \sum_{j=1}^{T} \left[ \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) w_j^2 + \gamma \right]
+$$
+
+$w_j$ is prediction in particular leaf, Its independent from the predictions from the other leaves, So 
+$L(t) = \sum_{j=1}^{T} L(t_j)$
+
+$L(t_j) = \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) w_j^2 + \gamma$
+
+Minimizing $L(t_j)$ with respect to $w_j$ gives 
+
+$$
+w_j^* = -\frac{\sum_{i\in I_j} g_i}{\sum_{i\in I_j} h_i + \lambda}
+$$
+
+where $g_i$ and $h_i$ depends on choice of loss function
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
