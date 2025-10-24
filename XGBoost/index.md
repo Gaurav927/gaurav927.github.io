@@ -13,5 +13,8 @@ We will first review
 
 ### Fundamentals of tree boosting
 
-\[ y_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F} \]
+$$
+y_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
+$$
+
 
