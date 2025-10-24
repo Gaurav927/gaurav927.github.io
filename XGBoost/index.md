@@ -12,11 +12,19 @@ We will first review
 2. We then describe the split finding methods as well as the system design
 
 ### Fundamentals of tree boosting
+Let D be our Dataset
 $D = \{(x_i, y_i)\} \quad (|D| = n, \quad x_i \in \mathbb{R}^m, \quad y_i \in \mathbb{R})$
 
 
 $$
 y_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
 $$
+
+Loss function
+$L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)$
+
+where
+
+$\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
 
 
