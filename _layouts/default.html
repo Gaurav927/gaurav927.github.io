@@ -1,26 +1,16 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-  </head>
-  <body>
-    <header>
-      <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-      <nav>
-        <a href="{{ site.baseurl }}/">Home</a> |
-        <a href="{{ site.baseurl }}/about/">About</a>
-      </nav>
-      <hr>
-    </header>
+<script>
+window.MathJax = {
+  tex: {
+    // support both $...$ and \( ... \) for inline; $$...$$ and \[...\] for display
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true
+  },
+  options: {
+    // don't try to render inside these tags
+    skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+  }
+};
+</script>
 
-    <main>
-      {{ content }}
-    </main>
-
-    <footer>
-      <hr>
-      <small>© {{ site.time | date: "%Y" }}</small>
-    </footer>
-  </body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
