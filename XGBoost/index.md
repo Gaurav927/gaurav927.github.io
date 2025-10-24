@@ -21,12 +21,14 @@ y_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
 $$
 
 Loss function
-$L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)$
+$$
+L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)
+\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2
+$$
+
+$$
 
 where
-
-$\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
-
 L(ϕ) is the regularized objective function to minimize.
 
 $\hat{y_i}$ is prediction from the boosting model
