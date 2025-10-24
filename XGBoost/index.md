@@ -23,7 +23,7 @@ $$
 Loss function
 $$
 L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)
-\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2
+
 $$
 
 where
