@@ -27,5 +27,6 @@ $\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
 where \
 L(ϕ) is the regularized objective function to minimize. \
 $\hat{y_i}$ is prediction from the boosting model \
-$y_i$ is actual label of the data 
+$y_i$ is actual label of the data \
+The second term Ω penalizes the complexity of the model
 
