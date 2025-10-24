@@ -48,17 +48,34 @@ For any f(x, y + h), where h is delta change the taylors series can be written a
 $f(x, y + h) \approx f(x, y) + \frac{\partial f(x, y)}{\partial y} h + \frac{1}{2} \frac{\partial^2 f(x, y)}{\partial y^2} h^2$ ---- eqn(2)
 
 comparing (1) and (2)
-x = $y_i$, y = $\hat{y}_{i}^{(t-1)}$ and h = $f_{t}(x_{i})$
 
-$l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))$
+$$
+x = y_i, y = \hat{y}_{i}^{(t-1)} and h = f_{t}(x_{i})
+$$
 
-= $l(y_{i}, \hat{y}_{i}^{(t-1)}) + \frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}} f_{t}(x_{i}) + \frac{1}{2}\frac{\partial^2 f(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2} f_{t}(x_{i})^2$
+$$
+l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))
+$$
 
-Rewriting $g_{i}$ = $\frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}}$ and $h_{i}$ = $\frac{\partial^2 f(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2}$
+the loss can be rewritten using taylors series 2nd degree approximation
 
-the loss can be rewritten as: 
+$$
+l(y_{i}, \hat{y}_{i}^{(t-1)}) + \frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}} f_{t}(x_{i}) + \frac{1}{2} \frac{\partial^2 l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2} f_{t}(x_{i})^2
+$$
 
-= $l(y_{i}, \hat{y}_{i}^{(t-1)}) + g_{i} f_{t}(x_{i}) +  h_{i} f_{t}(x_{i})^2$
+$$
+g_{i} = \frac{\partial l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial \hat{y}_{i}^{(t-1)}}
+$$
+
+$$
+h_{i} = \frac{\partial^2 l(y_{i}, \hat{y}_{i}^{(t-1)})}{\partial (\hat{y}_{i}^{(t-1)})^2}
+$$
+
+So the loss can be rewritten as:
+
+$$
+l(y_{i}, \hat{y}_{i}^{(t-1)}) + g_{i} f_{t}(x_{i}) + \frac{1}{2} h_{i} f_{t}(x_{i})^2
+$$
 
 
 $L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i) \right] + \Omega(f_t)$
