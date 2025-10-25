@@ -317,6 +317,18 @@ $\eta$ is associated with the weightage given to each sequential gradient boosti
 
 ### Approximate Split Finding Algorithm
 
+XGBoost usage approximate split finding algorithm to find the optimal split points
+```
+for each features in 1 ... m:
+    use global or local split values based on percentiles
+    for each value in global or local percentiles values at node N
+        find split points that gives maximum gain as discussed in split criterion
+```
+This gives Aprroximate Split point at a Node
+The paper proposes two way of generating search space, (global and local)
+
+global is done once per feature for a particular tree, while local is done at each node level, global is much faster (for each feature, percentile calculation is done once).
+
 
 ### Weighted Quantile Sketch
 
