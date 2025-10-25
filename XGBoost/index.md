@@ -333,6 +333,7 @@ Choice of global split values makes the training faster in comparision to local 
 
 
 ### Weighted Quantile Sketch
+This Weighted Quantile Sketch Algorithms help us to find the split points even when the data doesn't fits in the memory, this is done by parallel computing
 
 
 ### Sparsity Aware Split Findings
