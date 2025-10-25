@@ -8,6 +8,7 @@
 - [Gradient Tree Boosting](#gradient-tree-boosting)
 - [Expanding the Regularized Objective](#expanding-the-regularized-objective)
 - [Optimal Leaf Weights](#optimal-leaf-weights)
+- [Split Criterion](#split-criterion)
 - [References](#references)
 
 ## Introduction
@@ -254,7 +255,7 @@ This represents the **minimum loss value for a leaf** for a given tree structure
 ---
 
 ## Split Criterion
-At each node, we try different splits value that try to minimize the splitting criterion. Split criterion for a node is defined
+At each node, we try different splits value that try to minimize the splitting criterion. Split criterion for a node is defined as
 
 $$
 -\frac{1}{2} \frac{\left(\sum_{i \in I_(node)} g_i\right)^2}{\sum_{i \in I_(node)} h_i + \lambda} + \gamma - \left[ -\frac{1}{2} \frac{\left(\sum_{i \in I_(left)} g_i\right)^2}{\sum_{i \in I_(left)} h_i + \lambda} + \gamma  -\frac{1}{2} \frac{\left(\sum_{i \in I_(right)} g_i\right)^2}{\sum_{i \in I_(right)} h_i + \lambda} + \gamma \right]
@@ -264,9 +265,55 @@ $$
 \frac{1}{2}\left[ \frac{\left(\sum_{i \in I_(right)} g_i\right)^2}{\sum_{i \in I_(right)} h_i + \lambda}  +  \frac{\left(\sum_{i \in I_(left)} g_i\right)^2}{\sum_{i \in I_(left)} h_i + \lambda} - \frac{\left(\sum_{i \in I_(node)} g_i\right)^2}{\sum_{i \in I_(node)} h_i + \lambda} \right]- \gamma
 $$
 
-where $n_(node) = n_(left) + n_(right)$
+where,  $n_(node) = n_(left) + n_(right)$
+
+### Shrinkage and Column Subsampling
+
+These are additional techniques to prevent the overfitting, one is $\eta$ (learning rate) and columns subsampling as we do in do in random forest. A lower value of max_features to be used in Construction of Decision Tree help us in making models independent from each other. A group of independent model even with lower predictability help us eventually ends in good prediction power.
+
+Lets visualize this, suppose we have 5 independent weak classifier each having 0.6 accuracy. Suppose we are using voting for coming up with prediction value.
+
+P(correct prediction) = P(3 models correct prediction) + P(4 models correct prediction) + P(5 models correct prediction)
+
+Since each classifier is independent with accuracy $p = 0.6$, we use the binomial distribution:
+
+$$P(k \text{ correct}) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+where:
+- $n = 5$ (total number of classifiers)
+- $k$ = number of correct predictions
+- $p = 0.6$ (accuracy of each classifier)
+- $(1-p) = 0.4$ (error rate)
+
+***Case 1: Exactly 3 Classifiers Correct***
+
+$$P(\text{3 correct}) = \binom{5}{3} (0.6)^3 (0.4)^2$$
+
+$$P(\text{3 correct}) = 10 \times 0.216 \times 0.16 = 0.3456$$
+
+***Case 2: Exactly 4 Classifiers Correct***
+
+$$P(\text{4 correct}) = \binom{5}{4} (0.6)^4 (0.4)^1$$
+
+$$P(\text{4 correct}) = 5 \times 0.1296 \times 0.4 = 0.2592$$
+
+***Case 3: All 5 Classifiers Correct***
+
+$$P(\text{5 correct}) = \binom{5}{5} (0.6)^5 (0.4)^0$$
+
+$$P(\text{5 correct}) = 1 \times 0.07776 \times 1 = 0.07776$$
+
+***Final Result***
+
+$$P(\text{correct prediction}) = 0.3456 + 0.2592 + 0.07776 = 0.68256$$
+
+Column Subsampling helps us to make model indepedent. It's importance can't be ignored.
+
+$\eta$ is associated with the weightage given to each sequential gradient boosting tree that we are creating, a lower value gives less important to individual tree and thus promote weightage of all the trees.
 
 
+
+---
 
 ## Key Takeaways
 
