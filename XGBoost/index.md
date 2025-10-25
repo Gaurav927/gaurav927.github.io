@@ -15,14 +15,18 @@ We will first review
 Let D be our Dataset
 $D = \{(x_i, y_i)\} \quad (|D| = n, \quad x_i \in \mathbb{R}^m, \quad y_i \in \mathbb{R})$
 
-
 $$
 \hat{y_i} = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F}
 $$
 
-Loss function \
-$L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)$ \
-$\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2$
+Loss function 
+$$
+L(\phi) = \sum_{i} l(\hat{y_i}, y_i) + \sum_{k} \Omega(f_k)
+$$
+
+$$
+\Omega(f) = \gamma T + \frac{1}{2} \lambda \| w \|^2
+$$
 
 where \
 L(ϕ) is the regularized objective function to minimize. \
