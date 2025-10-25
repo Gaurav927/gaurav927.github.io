@@ -242,7 +242,7 @@ L(t_j) = \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \i
 $$
 
 $$
-L(t_j) = \left( - \sum_{i \in I_j} g_i \right)\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda} + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) {(-\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda})}^2 + \gamma
+L(t_j) = \left( - \sum_{i \in I_j} g_i \right)\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda} + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) {\left(-\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda}\right)}^2 + \gamma
 $$
 
 
@@ -313,6 +313,14 @@ $\eta$ is associated with the weightage given to each sequential gradient boosti
 
 ---
 
+## More Optimization that makes XGBoost Scalable
+
+### Approximate Split Finding Algorithm
+
+
+### Weighted Quantile Sketch
+
+### Sparsity Aware Split Findings
 
 
 ## Key Takeaways
