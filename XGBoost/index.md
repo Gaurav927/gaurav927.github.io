@@ -335,6 +335,31 @@ Choice of global split values makes the training faster in comparision to local 
 ### Weighted Quantile Sketch
 This Weighted Quantile Sketch Algorithms help us to find the split points even when the data doesn't fits in the memory, in such scenerio the approximate greedy algorithm fails. 
 
+Weights is represented by hessian ($h_{i}$), Lets try to understand why we use $h_{i}$ as weights?
+
+$$
+L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t(x_i)^2 \right] + \Omega(f_t)
+$$
+
+Rewriting this equation as 
+$$
+\frac{1}{2}h_{i}\sum_{i=1}^{n} \left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 \right] + \Omega(f_t)
+$$
+
+$$
+\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 + \left(\frac{g_i}{h_i} \right)^2 - \left(\frac{g_i}{h_i} \right)^2 \right] + \Omega(f_t)
+$$
+
+$\frac{g_{i}}{h_{i}}$ is constant 
+
+$$
+\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 + \left(\frac{g_i}{h_i} \right)^2 - \left(\frac{g_i}{h_i} \right)^2 \right] + \Omega(f_t)
+$$
+$$
+\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + constant
+$$
+Each data points are weighted by hessian
+
 
 ### Sparsity Aware Split Findings
 
