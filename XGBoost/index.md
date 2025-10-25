@@ -311,9 +311,9 @@ Column Subsampling helps us to make model indepedent. It's importance can't be i
 
 $\eta$ is associated with the weightage given to each sequential gradient boosting tree that we are creating, a lower value gives less important to individual tree and thus promote weightage of all the trees.
 
-
-
 ---
+
+
 
 ## Key Takeaways
 
