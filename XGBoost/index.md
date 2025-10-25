@@ -350,13 +350,8 @@ $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 + \left(\frac{g_i}{h_i} \right)^2 - \left(\frac{g_i}{h_i} \right)^2 \right] + \Omega(f_t)
 $$
 
-$\frac{g_{i}}{h_{i}}$ is constant 
-
 $$
-\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 + \left(\frac{g_i}{h_i} \right)^2 - \left(\frac{g_i}{h_i} \right)^2 \right] + \Omega(f_t)
-$$
-$$
-\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + constant
+\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
 Each data points are weighted by hessian
 
