@@ -237,10 +237,19 @@ $$
 Substituting $w_j^*$ back into $L(t_j)$:
 
 $$
+L(t_j) = \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) w_j^2 + \gamma
+$$
+
+$$
+L(t_j) = \left( - \sum_{i \in I_j} g_i \right)\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda} + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) {(-\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda})}^2 + \gamma
+$$
+
+
+$$
 L(t_j)^* = -\frac{1}{2} \frac{\left(\sum_{i \in I_j} g_i\right)^2}{\sum_{i \in I_j} h_i + \lambda} + \gamma
 $$
 
-This represents the **best possible loss reduction** for a given tree structure.
+This represents the **minimum loss value for a leaf** for a given tree structure. Since each data points lie in a single leaf. We can find the optimal value 
 
 ---
 
@@ -271,10 +280,6 @@ The mathematical foundation above enables XGBoost's key algorithms:
 ## References
 
 - Chen, T., & Guestrin, C. (2016). [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/pdf/1603.02754). In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining* (pp. 785-794).
-
-- Friedman, J. H. (2001). Greedy function approximation: A gradient boosting machine. *Annals of statistics*, 29(5), 1189-1232.
-
-
 
 ---
 
