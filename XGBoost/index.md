@@ -222,7 +222,7 @@ $$
 Solving for $w_j$:
 
 $$
-\boxed{w_j^* = -\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda}}
+w_j^* = -\frac{\sum_{i \in I_j} g_i}{\sum_{i \in I_j} h_i + \lambda}
 $$
 
 ### Interpretation
