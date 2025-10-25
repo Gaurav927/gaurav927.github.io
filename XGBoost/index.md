@@ -177,7 +177,7 @@ $$
 
 ### Grouping by Leaves
 
-Since each training instance belongs to exactly one leaf, we can reorganize terms by leaf node. Let $I_j$ be indicator variable indicating the set of instances in leaf j:
+Since each training instance belongs to exactly one leaf, we can reorganize terms by leaf node. Also, the prediction in a leaf node is constant value. Let $I_j$ be indicator variable indicating the set of instances in leaf j:
 
 $$
 \tilde{L}^{(t)} = \sum_{j=1}^{T} \left[ \left( \sum_{i \in I_j} g_i \right) w_j + \frac{1}{2} \left( \sum_{i \in I_j} h_i + \lambda \right) w_j^2 \right] + \gamma T
