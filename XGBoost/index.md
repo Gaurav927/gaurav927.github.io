@@ -341,7 +341,6 @@ $$
 L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t(x_i)^2 \right] + \Omega(f_t)
 $$
 
-Rewriting this equation as 
 $$
 \frac{1}{2}h_{i}\sum_{i=1}^{n} \left[ 2 * \frac{g_i}{h_i} f_t(x_i) + f_t(x_i)^2 \right] + \Omega(f_t)
 $$
@@ -353,7 +352,9 @@ $$
 $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
-Each data points are weighted by hessian
+
+
+
 
 
 ### Sparsity Aware Split Findings
