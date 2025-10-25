@@ -317,7 +317,7 @@ $\eta$ is associated with the weightage given to each sequential gradient boosti
 
 ### Approximate Split Finding Algorithm
 
-XGBoost usage approximate split finding algorithm to find the optimal split points
+XGBoost supports approximate split finding algorithm to find the optimal split points, this speed up the training in case we have millions of data points.
 ```
 for each features in 1 ... m:
     use global or local split values based on percentiles
@@ -327,10 +327,13 @@ for each features in 1 ... m:
 This gives Aprroximate Split point at a Node
 The paper proposes two way of generating search space, (global and local)
 
-global is done once per feature for a particular tree, while local is done at each node level, global is much faster (for each feature, percentile calculation is done once).
+global is done once per feature for a particular tree, while local is done at each node level, global is much faster (for each feature, percentile calculation is done once). 
+
+Choice of global split values makes the training faster in comparision to local split values.
 
 
 ### Weighted Quantile Sketch
+
 
 ### Sparsity Aware Split Findings
 
