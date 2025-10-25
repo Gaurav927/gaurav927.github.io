@@ -68,7 +68,7 @@ $$
 
 where:
 
-- **$l(\hat{y_i}, y_i)$** - A differentiable convex loss function (e.g., squared loss, logistic loss)
+- **$l(\hat{y_i}, y_i)$** - A differentiable loss function (e.g., squared loss, logistic loss), we prefer convex function here.
 - **$\Omega(f_k)$** - A regularization term that penalizes model complexity
 
 ### Regularization Term
@@ -81,9 +81,9 @@ $$
 
 **Components:**
 
-- **$\gamma T$** - Penalty for the number of leaves in the tree (T = number of leaves)
+- **$\gamma T$** - Penalty for the number of leaves in the tree (T = number of leaves), we generally control depth of tree (if depth of tree is d, then number of leaves is bounded by O($2^d$))
 - **$\frac{1}{2} \lambda \| w \|^2$** - L2 regularization on leaf weights
-- **$\gamma$** - Hyperparameter controlling leaf complexity
+- **$\gamma$** - Hyperparameter for minimum split gain
 - **$\lambda$** - Hyperparameter for L2 regularization
 - **$w_j$** - Predicted score on the j-th leaf
 
@@ -253,17 +253,30 @@ This represents the **minimum loss value for a leaf** for a given tree structure
 
 ---
 
+## Split Criterion
+At each node, we try different splits value that try to minimize the splitting criterion. Split criterion for a node is defined
+
+$$
+-\frac{1}{2} \frac{\left(\sum_{i \in I_(node)} g_i\right)^2}{\sum_{i \in I_(node)} h_i + \lambda} + \gamma - \left[ -\frac{1}{2} \frac{\left(\sum_{i \in I_(left)} g_i\right)^2}{\sum_{i \in I_(left)} h_i + \lambda} + \gamma  -\frac{1}{2} \frac{\left(\sum_{i \in I_(right)} g_i\right)^2}{\sum_{i \in I_(right)} h_i + \lambda} + \gamma \right]
+$$
+
+$$
+\frac{1}{2}\left[ \frac{\left(\sum_{i \in I_(right)} g_i\right)^2}{\sum_{i \in I_(right)} h_i + \lambda}  +  \frac{\left(\sum_{i \in I_(left)} g_i\right)^2}{\sum_{i \in I_(left)} h_i + \lambda} - \frac{\left(\sum_{i \in I_(node)} g_i\right)^2}{\sum_{i \in I_(node)} h_i + \lambda} \right]- \gamma
+$$
+
+where $n_(node) = n_(left) + n_(right)$
+
+
+
 ## Key Takeaways
 
-1. **Taylor Approximation Enables Optimization** - Second-order Taylor expansion converts the problem into a tractable quadratic form
+1. **Taylor Approximation Enables Optimization** - Second-order Taylor expansion converts the problem into a tractable quadratic form. Optimal leaf weights have a simple closed-form solution depending only on gradients, Hessians, and regularization. Note if we have taken higher order approximation of Taylor's series, we might need to solve quadratic equation for getting the optimal value
 
 2. **Leaf Independence** - The objective separates into independent leaf-wise losses, enabling efficient optimization
 
-3. **Closed-Form Solution** - Optimal leaf weights have a simple closed-form solution depending only on gradients, Hessians, and regularization
+3. **Regularization in Action** - The $\lambda$ term in the denominator naturally prevents extreme leaf weights, controlling model complexity. Note $\gamma$ doesn't play role in the optimal value, but it's play important role in optimal loss value, thus split criterion
 
-4. **Regularization in Action** - The $\lambda$ term in the denominator naturally prevents extreme leaf weights, controlling model complexity
-
-5. **Generality** - These formulas work for any differentiable convex loss function, making XGBoost applicable to regression, classification, and ranking tasks
+4. **Generality** - These formulas work for any differentiable loss function, making XGBoost applicable to regression, classification, and ranking tasks, we prefer convex loss function.
 
 ---
 
