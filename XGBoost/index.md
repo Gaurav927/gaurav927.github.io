@@ -43,9 +43,10 @@ $$
 L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})
 $$
 
-Using taylor's series 2nd order approximation, expanding 
+Using taylor's series 2nd order approximation, expanding \
+
 $$
-l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) -------- eqn(1)
+ l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))
 $$ 
 
 For any f(x, y + h), where h is delta change the taylors series can be written as \
@@ -57,7 +58,7 @@ $$
 comparing (1) and (2)
 
 $$
-x = y_i, y = \hat{y}_{i}^{(t-1)} and h = f_{t}(x_{i})
+x = y_i, y = \hat{y}_{i}^{(t-1)} and h = f_{t}(x_{i}) is delta change in the prediction
 $$
 
 $$
