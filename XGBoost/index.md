@@ -39,13 +39,20 @@ When we set regularisation term to 0, it falls back to traditional gradient tree
 ### Gradient Tree Boosting
 Let $f_{k}$ be kth tree that we are fitting in a sequential manner. The loss function for $f_{k}$ can be written as \
 
-$L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})$
+$$
+L(t) = \sum_{i=1}^{n} l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) + \Omega(f_{t})
+$$
 
-Using taylor's series 2nd order approximation, expanding $l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i}))$ -------- eqn(1)
+Using taylor's series 2nd order approximation, expanding 
+$$
+l(y_{i}, \hat{y}_{i}^{(t-1)} + f_{t}(x_{i})) -------- eqn(1)
+$$ 
 
 For any f(x, y + h), where h is delta change the taylors series can be written as \
 
-$f(x, y + h) \approx f(x, y) + \frac{\partial f(x, y)}{\partial y} h + \frac{1}{2} \frac{\partial^2 f(x, y)}{\partial y^2} h^2$ ---- eqn(2)
+$$
+f(x, y + h) \approx f(x, y) + \frac{\partial f(x, y)}{\partial y} h + \frac{1}{2} \frac{\partial^2 f(x, y)}{\partial y^2} h^2  ---- eqn(2)
+$$
 
 comparing (1) and (2)
 
@@ -78,7 +85,9 @@ l(y_{i}, \hat{y}_{i}^{(t-1)}) + g_{i} f_{t}(x_{i}) + \frac{1}{2} h_{i} f_{t}(x_{
 $$
 
 
-$L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i) \right] + \Omega(f_t)$
+$$
+L(t) = \sum_{i=1}^{n} \left[ g_i f_t(x_i) + \frac{1}{2} h_i f_t^2(x_i) \right] + \Omega(f_t)
+$$
 
 
 $$
