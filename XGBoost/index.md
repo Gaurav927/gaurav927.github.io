@@ -358,6 +358,8 @@ $$
 $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
+
+
 We can see for each $x_{i}$, in loss function it is weighted by $h_{i}$, if 
 $h_{i}$ is large, previous model is doing poor job in predictions.
 
