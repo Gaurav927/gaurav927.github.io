@@ -334,8 +334,12 @@ Choice of global split values makes the training faster in comparision to local 
 
 
 ### Weighted Quantile Sketch
-This Weighted Quantile Sketch Algorithms help us to find the split points even when the data doesn't fits in the memory, in such scenerio the approximate greedy algorithm fails. 
-Weighted sketch algorithm do by dividing the the datasets into chunk.
+This Weighted Quantile Sketch Algorithms help us to find the split points even when the data doesn't fits in the memory,
+and when data doesn't fit in memory, sorting is not possible and we can't use the approximate greedy algorithm. 
+
+Weighted Quantile Sketch is a data structure that help us to find the split point by utilizing parallel computing, where each small chunk of data is handled independently.
+
+This is done by assigning weights to each data points $x_{i}$ a weight of $w_{i}$, in our case this is hessian $h_{i}$.
 
 Weights is represented by hessian ($h_{i}$), Lets try to understand why we use $h_{i}$ as weights?
 
@@ -355,14 +359,22 @@ $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
 
-This is done by creating quantile of equal weights of Hessian.
+This is done by creating quantile of equal weights of Hessian. There are lot of information provided in the Apendix section of the paper.
 
 ### Sparsity Aware Split Findings
 By design, XGBoost can handle missing values, this is done by moving the data in the default direction, the default direction are learnt from the data.
 
-For the missing values, it calculates the gain of sending them to the left branch versus the right branch. It then assigns the missing values to the direction that results in the higher gain. This becomes the default direction for that specific split. 
+For the missing values, it calculates the gain of sending them to the left branch versus the right branch. It then assigns the missing values to the direction that results in the higher gain. This becomes the default direction for that specific split and even used during the inference time.
 
 ## System Design
+
+### Column Block for Parallel Learning
+
+
+
+### Cache-aware Access
+
+### Blocks for Out-of-core Computation
 
 
 
