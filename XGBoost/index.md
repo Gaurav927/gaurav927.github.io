@@ -358,8 +358,19 @@ $$
 $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
+We can see for each $x_{i}$, in loss function it is weighted by $h_{i}$, if 
+$h_{i}$ is large, previous model is doing poor job in predictions.
 
 This is done by creating quantile of equal weights of Hessian. There are lot of information provided in the Apendix section of the paper.
+
+If we look at gain calculation, 
+$$
+Gain(Node) = \frac{G²}{(H + \lambda)}
+$$
+
+A higher $H$ represent lower gain. Lower gain means poor model performance.
+
+Weighted Quantile is always preferred over simple Quantile, however this doesn't matter when we are using MSE as loss function, Hessian is constant here, For rest we always prefer weighted quantile as it tries to divide the data into blocks of equal hessian rather than doing by equal number of points. A low value of hessian is always preferred.
 
 ### Sparsity Aware Split Findings
 By design, XGBoost can handle missing values, this is done by moving the data in the default direction, the default direction are learnt from the data.
@@ -397,9 +408,9 @@ We can see 2 Optimization done here to fasten the process of split finding.
 
 However, this is ***not a space efficient solution***, we are consuming more space in doing the cleaver pre-sorting thing, an extra space equivalent to data.
 
-
-
 ### Cache-aware Access
+
+
 
 ### Blocks for Out-of-core Computation
 
