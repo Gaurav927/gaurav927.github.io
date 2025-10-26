@@ -372,6 +372,33 @@ For the missing values, it calculates the gain of sending them to the left branc
 
 
 
+In XGBoost, we are building model sequentially, the process of building 2nd tree can only be acheived by we have built the 1st tree. There is no parallel processing involved here. 
+
+We use parallel processing in finding the best candidate split.
+This is done by using Compressed Column Block. 
+
+Before training, the dataset is partitioned by columns (features) into "blocks". Each block contains a subset of the features but all of the rows.
+During running of best split Each thread run it's own best split on selected features and return's respective information gain to the master thread
+
+XGBoost does the expensive sorting only once as a pre-processing step before any trees are built.
+
+***One-Time Setup***: For each feature F in the dataset, XGBoost creates a new data structure. This structure contains all the data points (or rather, their indices) sorted according to their value for feature F.
+
+***Store in Blocks***: These pre-sorted lists are then stored in the columnar blocks we discussed earlier.
+
+This saves, repeated sorting needs to be done at each node for the best split.
+
+Only hessian and derivatives need's to be calculated at each sequential step, the calculation depends on it's previous tree.
+
+We can see 2 Optimization done here to fasten the process of split finding.
+
+1. Parallel Processing to find the best split.
+2. Pre-sorted data based on every features F.
+
+However, this is ***not a space efficient solution***, we are consuming more space in doing the cleaver pre-sorting thing, an extra space equivalent to data.
+
+
+
 ### Cache-aware Access
 
 ### Blocks for Out-of-core Computation
