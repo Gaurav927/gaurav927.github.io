@@ -335,6 +335,7 @@ Choice of global split values makes the training faster in comparision to local 
 
 ### Weighted Quantile Sketch
 This Weighted Quantile Sketch Algorithms help us to find the split points even when the data doesn't fits in the memory, in such scenerio the approximate greedy algorithm fails. 
+Weighted sketch algorithm do by dividing the the datasets into chunk.
 
 Weights is represented by hessian ($h_{i}$), Lets try to understand why we use $h_{i}$ as weights?
 
@@ -354,11 +355,16 @@ $$
 \frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
 
-
-
-
+This is done by creating quantile of equal weights of Hessian.
 
 ### Sparsity Aware Split Findings
+By design, XGBoost can handle missing values, this is done by moving the data in the default direction, the default direction are learnt from the data.
+
+For the missing values, it calculates the gain of sending them to the left branch versus the right branch. It then assigns the missing values to the direction that results in the higher gain. This becomes the default direction for that specific split. 
+
+## System Design
+
+
 
 
 ## Key Takeaways
@@ -373,26 +379,12 @@ $$
 
 ---
 
-## Next Steps
-
-The mathematical foundation above enables XGBoost's key algorithms:
-
-- **Split Finding** - Computing gain for potential splits to grow trees greedily
-- **Pruning** - Using the objective value to determine when to stop splitting
-- **System Optimization** - Histogram-based splitting, parallel training, and out-of-core processing
-
----
-
 ## References
 
-- Chen, T., & Guestrin, C. (2016). [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/pdf/1603.02754). In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining* (pp. 785-794).
+- Chen, T., & Guestrin, C. (2016). [XGBoost: A Scalable Tree Boosting System](https://arxiv.org/pdf/1603.02754).
 
 ---
 
 ## Contributing
 
 Found an error or have suggestions? Feel free to open an issue or submit a pull request!
-
-## License
-
-This guide is provided as-is for educational purposes.
