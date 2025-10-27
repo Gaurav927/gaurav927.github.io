@@ -3,6 +3,7 @@
 Many of the Machine Learning Scientist or ML Engineer goes through ML System Design Interview, In this blog we are going to discuss a set of checks that a interviewee should include while solution formulation. I have gone through the Machine Learning System Design book by Chip Huyen couple of times, most of items are taken from the books.
 
 
+
 * Clarify the requirements
 * Frame the business problems as an ML Problem
     * What sort of problem are you going to solve?
@@ -14,29 +15,31 @@ Many of the Machine Learning Scientist or ML Engineer goes through ML System Des
         * Trade of between One-hot Encoding vs Other Encoders 
         * Scaling
         * Embedding
-    * Data Leakages
+    * Check for Data Leakages
     * How will you prepare training data, test data and validation data?
-    * Sampling, Labeling, Imbalance Issues?
+    * Sampling, Labeling, Imbalance Issues - how to handle?
     * 
 * Select and Develop the Model
     * Define the Model
-    * Two - Tower Architecture
 * Evaluate the Model
+    * Mention the evaluation metrics, Guardrail metrics
+    * Check if Model Caliberation is required
     * Offline Evaluation
     * A/B Testing / Interleaving test
+
 * Deploy the Model
     *  Deployment Mode (Canary, Shadow)
     *  Prediction (Batch vs Online)
     * Model Compression (Model Distillation, Pruning, Low Rank Factorization, Quantization)
     * ML On Cloud or Edge
-    * 
+
 * Monitor the Deployment
     * Monitor the Data- drift
         * Covariate Shift
         * Lalel Shift
         * Concept Shift
     * Monitor ML Metrics
-    * Continual Learning (Stateless Training vs Stateful Training)
+    * Continual Learning (Stateless Training vs Stateful Training) - Training frequency
     * Model Performance and need for re-training
     * Infrastructure
         * Docker, Kubernetes
