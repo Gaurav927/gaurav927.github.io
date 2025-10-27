@@ -218,9 +218,11 @@ $$
 
 To find the optimal weight $w_j^*$, we take the derivative with respect to $w_j$ and set it to zero:
 
+
 $$
 \frac{\partial L(t_j)}{\partial w_j} = \sum_{i \in I_j} g_i + \left( \sum_{i \in I_j} h_i + \lambda \right) w_j = 0
 $$
+
 This is a form solution, using a higher degree gets us into quadratic or cubic for $w_{j}$, which is solvable. We have the exact solution for that, or we can use the Newton-Raphson method for solving it (which can be computationally expensive), but we it might yield better results. In the paper, it's a 2nd degree approximation.
 
 Solving for $w_j$:
