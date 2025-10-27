@@ -45,4 +45,32 @@ Many of the Machine Learning Scientist or ML Engineer goes through ML System Des
         * Docker, Kubernetes
     * Responsible AI (Ethics)
 
+---
+## AB Testing Framework
 
+Think of Customer Funnel
+
+* Success Metric
+* State Hypothesis Statement & Alternative Hypothesis
+    * Set Significance Level
+    * Set Power of Test 
+    * Minimum detectable lift
+* Design the Experiment
+    * Randomisation unit (think in terms of Customer Funnel)
+        * Session level
+        * User Level
+        * Search level
+    * Determine the sample size
+    * N = 16sigma/d^2
+    * Duration of experiment
+* Run the Experiments
+* Validity Check
+    * Checks for Instrumentation factors
+    * External Factors
+    * Selection Bias (Run AA test)
+    * Sample Ratio Mismatch
+    * Novelty Effect 
+* Interpret Results
+* Launch Decision
+    * Guard Rail Metric
+    * Cost of Launching
