@@ -1,5 +1,7 @@
 # Learning the Nuts and Bolts of XGBoost
 
+In this blog, we are trying to understand XGBoost from Mathematical perspective, digging deep into derivations.
+
 
 ## Table of Contents
 
@@ -83,7 +85,7 @@ $$
 **Components:**
 
 - **$\gamma T$** - Penalty for the number of leaves in the tree (T = number of leaves), we generally control depth of tree (if depth of tree is d, then number of leaves is bounded by O($2^d$))
-- **$\frac{1}{2} \lambda \| w \|^2$** - L2 regularization on leaf weights
+- **$\frac{1}{2} \lambda \| w \|^2$** - L2 regularization on leaf predictions.
 - **$\gamma$** - Hyperparameter for minimum split gain
 - **$\lambda$** - Hyperparameter for L2 regularization
 - **$w_j$** - Predicted score on the j-th leaf
@@ -219,6 +221,7 @@ To find the optimal weight $w_j^*$, we take the derivative with respect to $w_j$
 $$
 \frac{\partial L(t_j)}{\partial w_j} = \sum_{i \in I_j} g_i + \left( \sum_{i \in I_j} h_i + \lambda \right) w_j = 0
 $$
+this is closed form solution, using higher degree get us into quadratic or cubic for $w_{j}$, which is solvable, we have the exact solution for that or even we can use newton raphson for solving it (which can be computationally expensive), but might get better results. In paper it's 2nd degree approximation.
 
 Solving for $w_j$:
 
