@@ -258,7 +258,7 @@ This represents the **minimum loss value for a leaf** for a given tree structure
 ---
 
 ## Split Criterion
-At each node, we try different splits value that try to minimize the splitting criterion. Split criterion for a node is defined as
+At each node, we try different splits value that try to minimize the splitting criterion. Split criterion for a node is defined as whcih is similar to Information gain in Decision tree.
 
 $$
 -\frac{1}{2} \frac{\left(\sum_{i \in I_(node)} g_i\right)^2}{\sum_{i \in I_(node)} h_i + \lambda} + \gamma - \left[ -\frac{1}{2} \frac{\left(\sum_{i \in I_(left)} g_i\right)^2}{\sum_{i \in I_(left)} h_i + \lambda} + \gamma  -\frac{1}{2} \frac{\left(\sum_{i \in I_(right)} g_i\right)^2}{\sum_{i \in I_(right)} h_i + \lambda} + \gamma \right]
@@ -269,6 +269,8 @@ $$
 $$
 
 where,  $n_(node) = n_(left) + n_(right)$
+
+From observation $\gamma$ does not play role in optimal loss value, but it's come into picture during gain calculation.
 
 ### Shrinkage and Column Subsampling
 
