@@ -326,9 +326,9 @@ $\eta$ is associated with the weightage given to each sequential gradient boosti
 XGBoost supports an approximate split finding algorithm to find the optimal split points, which speeds up training when we have millions of data points.
 ```
 For each feature in 1 ... m:
- Use global or local split values based on percentiles
- for each value in the global or local percentiles values at node N
- Find split points that gives maximum gain as discussed in split criterion
+    Use global or local split values based on percentiles
+    for each value in the global or local percentiles values at node N
+        Find split points that gives maximum gain as discussed in split criterion
 ```
 This gives approximate split point at a Node
 The paper proposes two ways of generating search space, (global and local)
