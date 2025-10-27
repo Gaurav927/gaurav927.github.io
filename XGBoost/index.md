@@ -440,7 +440,7 @@ Following are regularization in XGBoost.
 * 2nd degree taylors approximation in a way acting as regularization (we are not looking for exact solution, an approximate one helping us to not overfit the training data).
 * column subsampling
 
-4. **Generality** - These formulas work for any differentiable loss function, making XGBoost applicable to regression, classification, and ranking tasks. We prefer a convex loss function.
+4. **Generality** - These formulas work for any differentiable loss function, making XGBoost applicable to regression, classification.
 
 ---
 
