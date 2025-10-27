@@ -356,7 +356,7 @@ $$
 $$
 
 $$
-\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) - \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
+\frac{1}{2}\sum_{i=1}^{n} h_{i}\left[ \left(f_t(x_i) + \frac{g_i}{h_i} \right)^2\right] + \Omega(f_t) + \text{constant}
 $$
 
 
@@ -382,7 +382,6 @@ For the missing values, it calculates the gain of sending them to the left branc
 ## System Design
 
 ### Column Block for Parallel Learning
-
 
 
 In XGBoost, we are building model sequentially, the process of building 2nd tree can only be acheived by we have built the 1st tree. There is no parallel processing involved here. 
