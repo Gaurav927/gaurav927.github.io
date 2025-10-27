@@ -1,4 +1,4 @@
-# Machine Learning System Design Framwork
+# Machine Learning System Design Framework
 
 Many of the Machine Learning Scientist or ML Engineer goes through ML System Design Interview, In this blog we are going to discuss a set of checks that a interviewee should include while solution formulation. I have gone through the Machine Learning System Design book by Chip Huyen couple of times, most of items are taken from the books.
 
