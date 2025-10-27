@@ -432,6 +432,13 @@ However, this is ***not a space-efficient solution***; we are consuming more spa
 2. **Leaf Independence** - The objective separates into independent leaf-wise losses, enabling efficient optimization
 
 3. **Regularization in Action** - The $\lambda$ term in the denominator naturally prevents extreme leaf weights, controlling model complexity. Note $\gamma$ doesn't play role in the optimal value, but it plays important role in the optimal loss value, thus the split criterion
+Following are regularization in XGBoost.
+* $\eta$ - weightage of each sequntial tree
+* $\lambda$ - directly effecting each leaves prediction
+* $\gamma$ - min split gain
+* depth of tree
+* 2nd degree taylors approximation in a way acting as regularization (we are not looking for exact solution, an approximate one helping us to not overfit the training data).
+* column subsampling
 
 4. **Generality** - These formulas work for any differentiable loss function, making XGBoost applicable to regression, classification, and ranking tasks. We prefer a convex loss function.
 
