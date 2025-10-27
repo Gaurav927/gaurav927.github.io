@@ -425,7 +425,7 @@ However, this is ***not a space efficient solution***, we are consuming more spa
 
 ## Key Takeaways
 
-1. **Taylor Approximation Enables Optimization** - Second-order Taylor expansion converts the problem into a tractable quadratic form. Optimal leaf weights have a simple closed-form solution depending only on gradients, Hessians, and regularization. Note if we have taken higher order approximation of Taylor's series, we might need to solve quadratic equation for getting the optimal value
+1. **Taylor Approximation Enables Optimization** - Second-order Taylor expansion converts the problem into a easily solvable form. Optimal leaf weights have a simple closed-form solution depending only on gradients, Hessians, and regularization. Note if we have taken higher order approximation of Taylor's series, we might need to solve quadratic equation for getting the optimal value
 
 2. **Leaf Independence** - The objective separates into independent leaf-wise losses, enabling efficient optimization
 
