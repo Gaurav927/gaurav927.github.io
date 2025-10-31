@@ -7,6 +7,7 @@ Many of the Machine Learning Scientist or ML Engineer goes through ML System Des
 * Clarify the requirements
 * Frame the business problems as an ML Problem
     * What sort of problem are you going to solve?
+    * Knowing the objective is important because it will determine how you frame the problem, which algorithms you will select, which performance measure you will use to evaluate your model, and how much effort you will spend tweaking it.
 * Prepare the Data
     * Mention Data Sources
     * Mention the label (how are you going to capture?)
@@ -91,7 +92,7 @@ This checklist can guide you through your Machine Learning projects. There are e
 
 Obviously, you should feel free to adapt this checklist to your needs.  
 
-# Frame the problem and look at the big picture  
+### Frame the problem and look at the big picture  
 1. Define the objective in business terms.  
 2. How will your solution be used?  
 3. What are the current solutions/workarounds (if any)?  
