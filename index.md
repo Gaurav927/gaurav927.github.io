@@ -14,3 +14,4 @@ Welcome to my blog! Click a topic below:
 - [Optimization Algorithms from Scratch]({{ site.baseurl }}/optimization-from-scratch/)
 - [XGBoost]({{ site.baseurl }}/XGBoost/)
 - [ml-system-design]({{ site.baseurl }}/ml-system-design/)
+- [thompson-sampling]({{site.baseurl}}/thompson-sampling)
