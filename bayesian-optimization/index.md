@@ -55,11 +55,11 @@ $$
 \underbrace{P(w \mid D)}_{\text{Posterior}} = \frac{\overbrace{P(D \mid w)}^{\text{Likelihood}} \overbrace{P(w)}^{\text{Prior}}}{\underbrace{P(D)}_{\text{Evidence}}}
 $$
 
-We can see P(y| x, D) is the marginalization of P(y, w| x, D) with respect to w, therefore the prediction value at x is weighted prediction over all possible vectors w. Let us try to understand equation 3 intuitively.
+We can see $P(y| x, D)$ is the marginalization of $P(y, w| x, D)$ with respect to w, therefore the prediction value at x is weighted prediction over all possible vectors w. Let us try to understand equation 3 intuitively.
 
 The first part P(y|x, w) is representing the distribution of y given weights(w) and features(x). The second part is referring to the prediction weightage given the training dataset and how probable are the weights.
 
-In summary, we are going over all the weights possibilities, getting their corresponding influence on our test data (P(w|D)), and their prediction (P(y|x, w)). P(y|x, D) follows a normal distribution, this can be proved using product properties mentioned in the Introduction section.
+In summary, we are going over all the weights possibilities, getting their corresponding influence on our test data $(P(w|D))$, and their prediction $(P(y|x, w))$. $P(y|x, D)$ follows a normal distribution, this can be proved using product properties mentioned in the Introduction section.
 
 ### Mathematical Formulation
 
