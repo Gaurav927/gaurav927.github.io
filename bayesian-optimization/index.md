@@ -39,7 +39,9 @@ Let us assume x is a test point, y be corresponding unknown prediction, then we 
 
 
 
-$P(y|x, D)$
+$$
+P(y|x, D)
+$$
 
 $$
 \int P(y, w| x, D) \,dw
@@ -50,7 +52,6 @@ $$
 $$ 
 Note P(w | D) can be written as
 $$
-
 \underbrace{P(w \mid D)}_{\text{Posterior}} = \frac{\overbrace{P(D \mid w)}^{\text{Likelihood}} \overbrace{P(w)}^{\text{Prior}}}{\underbrace{P(D)}_{\text{Evidence}}}
 $$
 
@@ -59,6 +60,17 @@ We can see P(y| x, D) is the marginalization of P(y, w| x, D) with respect to w,
 The first part P(y|x, w) is representing the distribution of y given weights(w) and features(x). The second part is referring to the prediction weightage given the training dataset and how probable are the weights.
 
 In summary, we are going over all the weights possibilities, getting their corresponding influence on our test data (P(w|D)), and their prediction (P(y|x, w)). P(y|x, D) follows a normal distribution, this can be proved using product properties mentioned in the Introduction section.
+
+
+![alt text](<../docs/img/bayesian/p(y|x, D).webp>)
+At each point, It follows a normal distribution with the same variance, this is the same as P(y| x, w)
+
+![alt text](../docs/img/bayesian/group.webp)
+The separate line indicates the different functions, and black dots represent actual data points, for getting inference at any point test data x, and different models and their corresponding weights can be used to generate confidence intervals.
+
+
+
+### Mathematical Formulation
 
 
 
