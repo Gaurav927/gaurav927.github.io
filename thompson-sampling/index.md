@@ -42,7 +42,12 @@ for time = 1, 2 ..... do
     
 ```
 
-A notebook has been attached using this simulationc
+A notebook has been attached that tried to simulate an actual unknown 3 arms bandit problem using thompson sampling.
+
+---
+### General Thompson Sampling
+
+
 
 
 
