@@ -46,11 +46,10 @@ $$
 $$
 \int P(y, w| x, D) \,dw
 $$ 
-value of w dependents on D (no involvement of test point)
+
 $$ 
 \int P(y | x, w) P(w|D) \,dw
 $$ 
-Note P(w | D) can be written as
 $$
 \underbrace{P(w \mid D)}_{\text{Posterior}} = \frac{\overbrace{P(D \mid w)}^{\text{Likelihood}} \overbrace{P(w)}^{\text{Prior}}}{\underbrace{P(D)}_{\text{Evidence}}}
 $$
