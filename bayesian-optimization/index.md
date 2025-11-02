@@ -61,10 +61,9 @@ The first part P(y|x, w) is representing the distribution of y given weights(w) 
 In summary, we are going over all the weights possibilities, getting their corresponding influence on our test data (P(w|D)), and their prediction (P(y|x, w)). P(y|x, D) follows a normal distribution, this can be proved using product properties mentioned in the Introduction section.
 
 
-![alt text](<../docs/img/bayesian/p(y|x, D).webp>)
 At each point, It follows a normal distribution with the same variance, this is the same as P(y| x, w)
 
-![alt text](../docs/img/bayesian/group.webp)
+
 The separate line indicates the different functions, and black dots represent actual data points, for getting inference at any point test data x, and different models and their corresponding weights can be used to generate confidence intervals.
 
 
