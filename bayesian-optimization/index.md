@@ -52,31 +52,3 @@ This integral averages the predictions `P(y | x, w)` from every possible model `
 
 A Gaussian Process provides a way to compute this intimidating integral analytically. It does this by placing a GP prior directly on the *function* `f(x)` instead of on parameters `w`, moving us from a parameter-space view to a function-space view.
 
-### Mathematical Formulation of a GP
-
-A Gaussian Process is fully specified by its **mean function** `m(x)` and its **covariance function** (or **kernel**) `k(x, x')`.
-
-$$
-f(x) \sim \mathcal{GP}(m(x), k(x, x'))
-$$
-
-*   **Mean Function `m(x)`:** This represents the expected value of the function at input `x`. It is often set to zero for simplicity.
-    $$
-    m(x) = \mathbb{E}[f(x)]
-    $$
-*   **Covariance Function `k(x, x')`:** This is the heart of the GP. It models the covariance between the function's values at two different points, `x` and `x'`. It encodes our assumptions about the function's smoothness and behavior.
-    $$
-    k(x, x') = \text{Cov}(f(x), f(x'))
-    $$
-    A common choice is the a Squared Exponential (or RBF) kernel:
-    $$
-    k(x, x') = \sigma_f^2 \exp\left(-\frac{1}{2l^2}(x-x')^2\right)
-    $$
-
-Given a set of training points `X` and test points `X_*`, the GP assumes that the function values `f` and `f_*` are jointly Gaussian:
-
-$$
-\begin{bmatrix} \mathbf{f} \\ \mathbf{f}_* \end{bmatrix} \sim \mathcal{N} \left( \mathbf{0}, \begin{bmatrix} K(X, X) & K(X, X_*) \\ K(X_*, X) & K(X_*, X_*) \end{bmatrix} \right)
-$$
-
-Using the property of conditional distributions of Gaussians, we can derive the posterior predictive distribution `P(f_* | X_*, X, f)`, which will also be a Gaussian with an analytical mean and variance. This is the mechanism that allows Bayesian Optimization to work.
