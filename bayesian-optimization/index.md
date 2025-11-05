@@ -8,7 +8,7 @@ permalink: /bayesian-optimization/
 
 ## Why Bayesian Optimization?
 
-With numerous optimization algorithms available, what makes Bayesian Optimization a valuable tool? It particularly excels in optimizing **black-box functions** that are expensive to evaluate. For example, tuning hyperparameters of a deep learning model, optimizing a chemical process, or finding the best design in an engineering simulation.
+With numerous optimization algorithms available, what makes Bayesian Optimization a valuable tool? It particularly excels in optimizing **black-box functions** that are expensive to evaluate. For example, tuning hyperparameters of a deep learning model, optimizing a chemical process, or finding the best design in an engineering simulation. Written the same post on medium couple of years back.
 
 To understand Bayesian Optimization, we must first explore its core component: the **Gaussian Process**.
 
