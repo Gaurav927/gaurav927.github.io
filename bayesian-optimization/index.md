@@ -50,5 +50,77 @@ $$
 
 This integral averages the predictions `P(y | x, w)` from every possible model `w`, weighted by the posterior `P(w | D)`.
 
-A Gaussian Process provides a way to compute this intimidating integral analytically. It does this by placing a GP prior directly on the *function* `f(x)` instead of on parameters `w`, moving us from a parameter-space view to a function-space view.
+### Kernel Function
+This is second building block for our final masterpiece Gaussian Process. A Kernel is seen in Support Vector Machine(which help us projection in infinite dimesion in case of RBF). It's the same `kernel` we use in Gaussian Process. Lets look at few properties of Kernel function.
+Suppose `K(X, Y)` is a kernel function, then following properties must hold true. This help us in desiging any kernel function used in any area.
+
+1. K(x, y) = f(x) f(y)
+2. K is also symmetric from property  K(y, x) = f(y)f(x)
+3. Kernel matrix must be positive semidefnite matrix ($\lambda$ >= 0), where $\lambda$ is eigen value of Kernel matrix.
+
+This mainly form the basics of Guassian Process.
+The Covariance matrix in GP is given by Gram matrix.
+Given a set of vectors, $S = \{x_1, \dots, x_n\}$, the Gram matrix is defined as the 
+$n \times n$ matrix $G$ whose entries are given by:
+$$
+G_{ij} = \langle x_i, x_j \rangle
+$$
+If we are using a kernel function $\kappa$ to evaluate the inner products in a feature 
+space with a feature map $\phi$, the associated Gram matrix has entries:
+$$
+G_{ij} = \langle \phi(x_i), \phi(x_j) \rangle = \kappa(x_i, x_j)
+$$
+### Joint Distribution
+$$
+{Y} =
+\begin{bmatrix}
+y_{1}  \\
+y_{2} \\
+\end{bmatrix} 
+$$
+
+$$
+Y \thicksim N(\mu, \Sigma)
+$$
+$$
+\boldsymbol{\mu} = 
+\begin{bmatrix}
+\mu_{1}  \\
+\mu_{2} \\
+\end{bmatrix} 
+\\
+$$
+$$
+\boldsymbol{\Sigma} = 
+\begin{bmatrix}
+\Sigma_{11} & \Sigma_{12} \\
+\Sigma_{21} & \Sigma_{22} \\
+\end{bmatrix}
+$$
+
+### Conditional Distribution
+$$
+p(y_{1} | x_{1}, x_{2}, y_{2}) \thicksim N(\mu_{1|2}, \Sigma_{2|1})
+$$
+
+$$
+\mu_{1|2} \quad=\quad \mu_{2} \quad + \quad \Sigma_{21}\Sigma^{-1}_{11}(y_{1} - \mu_{1})
+$$
+
+$$
+\Sigma_{2|1} = \Sigma_{22} - \Sigma_{21}\Sigma^{-1}_{11}\Sigma_{12}
+$$
+
+where $y_{1}$ can be a vector or scalar
+
+
+## Refernce 
+https://people.eecs.berkeley.edu/~jordan/kernels/0521813972c03_p47-84.pdf
+
+
+
+
+
+
+
 
