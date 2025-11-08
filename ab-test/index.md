@@ -68,16 +68,32 @@ We are going to keep $H_{o}$ when $\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt
 
 P(keep $H_{o}$ | $H_{a}$ is true)
 
-P($\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
+Lets write $H_{a}$ is true as $H_{a}$
+
+$$
+P(\overline{X_{n}} \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\alpha) | H_{a})
+$$
+
+Adding $\Delta$ and Substracting $\Delta$ 
+
+$$
+P(\Delta -\Delta + \overline{X_{n}} \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\alpha) | H_{a} )
+
+$$
+
+$$
+P(\Delta  + \overline{X_{n}} -\Delta \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\alpha) | H_{a})
+
+$$
+
+$$
+P(\overline{X_{n}} -\Delta \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\alpha) - \Delta | H_{a})
+$$
 
 
-P($\Delta$ -$\Delta$ + $\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
-
-P($\Delta$  + $\overline{X_{n}}$ -$\Delta$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
-
-P( $\overline{X_{n}}$ -$\Delta$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ - $\Delta$ | $H_{a}$ is true)
-
-P( $\frac{\sqrt{n}}{\sigma}$($\overline{X_{n}}$ -$\Delta$) $\leq$  $\Phi^{-1}(1-\alpha)$ - $\frac{\sqrt{n}}{\sigma}$ $\Delta$ | $H_{a}$ is true)
+$$
+P( \frac{\sqrt{n}}{\sigma}(\overline{X_{n}} -\Delta) \leq  \Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma} \Delta | H_{a})
+$$
 
 $$
 \Phi(\Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma}\Delta) \leq \beta
