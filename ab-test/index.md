@@ -34,7 +34,8 @@ Var($\overline{X_{n}}$) = $\frac{\sigma^2}{n}$
 
 $\overline{X_{n}}$ $\thicksim$ $N(\mu, \frac{\sigma}{\sqrt{n}})$
 
-![alt text](image.png)
+<img src="./image.png" alt="drawing" width="500"/>
+
 
 
 
