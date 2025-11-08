@@ -36,6 +36,19 @@ $\overline{X_{n}}$ $\thicksim$ $N(\mu, \frac{\sigma}{\sqrt{n}})$
 
 <img src="./image.png" alt="drawing" width="500"/>
 
+Var($\overline{X_{n}}$) = $\frac{\sigma^2}{n}$\
+Using above properties, scaling $\overline{X_{n}}$ by $\frac{\sqrt{n}}{\sigma}$ will result in unit variance
+
+Var($\frac{\sqrt{n}}{\sigma}\overline{X_{n}}$) = 1
+
+$\frac{\sqrt{n}}{\sigma}\overline{X_{n}}$ $\thicksim$ $N(\mu, 1)$
+
+Generally $\mu$ is considered zero for null hypothesis
+
+
+
+
+
 
 
 
