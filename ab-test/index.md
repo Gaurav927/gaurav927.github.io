@@ -45,6 +45,73 @@ $\frac{\sqrt{n}}{\sigma}\overline{X_{n}}$ $\thicksim$ $N(\mu, 1)$
 
 Generally $\mu$ is considered zero for null hypothesis
 
+Let $\Phi(x)$ be cumulative distribution function for N(0, 1)
+
+**Controlling for false postives**: ($\alpha$): P(reject $H_{o}$ | $H_{o}$ is true)
+
+this will happend when $\frac{\sqrt{n}}{\sigma}\overline{X_{n}}$ > $\Phi^{-1}(1-\alpha)$
+this means reject $H_{o}$ if $\overline{X_{n}}$ > $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$
+
+Depending on the wheather test is one tailed or two tailed, select favourable region.
+
+**Controlling for false negatives**
+
+the value of $\mu_{a}$ is $\Delta$ (from the defnition of MDE)
+
+$\frac{\sqrt{n}}{\sigma}\overline{X_{n}}$ $\thicksim$ $N(\Delta, 1)$
+
+$\frac{\sqrt{n}}{\sigma}(\overline{X_{n}} - \Delta)$ $\thicksim$ $N(0, 1)$
+
+P(reject $H_{a}$ | $H_{a}$ is true) or P(keep $H_{o}$ | $H_{a}$ is true) $\leq$ $\beta$
+
+We are going to keep $H_{o}$ when $\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$
+
+P(keep $H_{o}$ | $H_{a}$ is true)
+
+P($\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
+
+
+P($\Delta$ -$\Delta$ + $\overline{X_{n}}$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
+
+P($\Delta$  + $\overline{X_{n}}$ -$\Delta$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ | $H_{a}$ is true)
+
+P( $\overline{X_{n}}$ -$\Delta$ $\leq$ $\frac{\sigma}{\sqrt{n}}$ $\Phi^{-1}(1-\alpha)$ - $\Delta$ | $H_{a}$ is true)
+
+P( $\frac{\sqrt{n}}{\sigma}$($\overline{X_{n}}$ -$\Delta$) $\leq$  $\Phi^{-1}(1-\alpha)$ - $\frac{\sqrt{n}}{\sigma}$ $\Delta$ | $H_{a}$ is true)
+
+$$
+\Phi(\Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma}\Delta) \leq \beta
+$$
+
+$$
+\Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma}\Delta \leq \Phi^{-1}(\beta)
+$$
+
+$$
+\Phi^{-1}(1-\alpha) - \Phi^{-1}(\beta)\leq  \frac{\sqrt{n}}{\sigma}\Delta 
+$$
+
+$$
+\frac{\sigma}{\Delta} (\Phi^{-1}(1-\alpha) - \Phi^{-1}(\beta))\leq  \sqrt{n}
+$$
+
+$$
+\left[\frac{\sigma}{\Delta} (\Phi^{-1}(1-\alpha) - \Phi^{-1}(\beta))\right]^2\leq n
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
