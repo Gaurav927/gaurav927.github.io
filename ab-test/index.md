@@ -116,23 +116,10 @@ $$
 $$
 \left[\frac{\sigma}{\Delta} (\Phi^{-1}(1-\alpha) - \Phi^{-1}(\beta))\right]^2\leq n
 $$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Since $\Phi$ is symmetrical function, this can be written as 
+$$
+\left[\frac{\sigma}{\Delta} (\Phi^{-1}(1-\alpha) + \Phi^{-1}(1- \beta))\right]^2\leq n
+$$
 
 
 
