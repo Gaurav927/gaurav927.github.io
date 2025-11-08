@@ -86,6 +86,7 @@ P(\Delta  + \overline{X_{n}} -\Delta \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\a
 
 $$
 
+
 $$
 P(\overline{X_{n}} -\Delta \leq \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\alpha) - \Delta | H_{a})
 $$
@@ -95,6 +96,7 @@ $$
 P( \frac{\sqrt{n}}{\sigma}(\overline{X_{n}} -\Delta) \leq  \Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma} \Delta | H_{a})
 $$
 
+Since $H_{a}$ is true 
 $$
 \Phi(\Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma}\Delta) \leq \beta
 $$
