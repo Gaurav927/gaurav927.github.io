@@ -97,6 +97,7 @@ P( \frac{\sqrt{n}}{\sigma}(\overline{X_{n}} -\Delta) \leq  \Phi^{-1}(1-\alpha) -
 $$
 
 Since $H_{a}$ is true 
+
 $$
 \Phi(\Phi^{-1}(1-\alpha) - \frac{\sqrt{n}}{\sigma}\Delta) \leq \beta
 $$
