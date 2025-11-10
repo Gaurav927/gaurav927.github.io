@@ -1,4 +1,4 @@
-# AB Test in detail
+# Deriving number of samples required
 
 This blog deals with detail mathematical derivation of some of the key concepts in AB Test.
 
