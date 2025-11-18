@@ -16,6 +16,8 @@ Unfortunately, this is hard to optimize, since log can't be pushed inside the in
 
 $$
 =\sum_{i}^N \log[\sum_{z_{i}}q(z_{i})\frac{p(x_{i}, z_{i} | \theta)}{q(z_{i})})]
+
+
 $$
 `Using Jensen inequality`
 
