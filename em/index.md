@@ -5,8 +5,8 @@ EM Algorithm is used to find optimal parameter of MLE or MAP when there is missi
 
 ## Derivation
 $$
-
 l(\theta) = \sum_{i=1}^{n} \log(p(x_{i} | \theta))
+
 $$
 
 
