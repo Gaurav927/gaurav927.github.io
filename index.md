@@ -17,3 +17,4 @@ Welcome to my blog! Click a topic below:
 - [thompson-sampling]({{site.baseurl}}/thompson-sampling)
 - [ab-test]({{site.baseurl}}/ab-test)
 - [svm]({{site.baseurl}}/svm)
+- [em]({{site.baseurl}}/em)
