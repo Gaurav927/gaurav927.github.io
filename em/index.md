@@ -85,6 +85,68 @@ Lets try to understand GMM, K-means and Probablitic PCA using the above setup.
 
 ## Gaussian Mixture Model
 
+Lets suppose we are trying to fit k clusters each having $\mu_{i}$ and $\Sigma_{i}$ and $\pi_{i}$  
+
+Consider MLE for GMM
+
+$$
+\sum_{i}^N \log(p(x_{i}|\theta))
+$$
+
+$$
+\sum_{i}^N\log(\sum_{j}^k P(X = x_{i}, z_{i} = j | \theta)
+$$
+
+$$
+\sum_{i}^N\log(\sum_{j}^k q(z_{i} = j) \frac{P(X = x_{i}, z_{i} = j | \theta)}{q(z_{i} = j)})
+$$
+
+
+
+
+$$
+\sum_{i}^N\log(\sum_{j}^k q(z_{i} = j) \frac{P(X = x_{i}, z_{i} = j | \theta)}{q(z_{i} = j)})
+$$
+
+$$
+P(X = x_{i}, z_{i} = j) = P(X=x_{i}| \theta, z_{i} = j)P(z_{i} = j| \theta, x_{i})
+$$
+`Using Jensen inequalities`
+$$
+\sum_{i}^N\sum_{j}^k q(z_{i} = j) log(\frac{P(X = x_{i}, z_{i} = j | \theta)}{q(z_{i} = j)})
+$$
+
+`using results from previous section`
+
+$$
+q_{i}(z_{i}) = p(z_{i} = j | \theta, x_{i})
+$$
+
+$$
+p(z_{i} = j | \theta, x_{i}) = \gamma_{ij}
+$$
+
+`Using Bayes theorem`
+
+$$
+\gamma_{ij} = \frac{\pi_{j}N(x_{i}, \mu_{j}, \Sigma_{j})}{\sum\pi_{j}N(x_{i},\mu_{j}, \Sigma_{j})}
+$$
+
+This is E step, at each iteration, data point and number of cluster update $\gamma_{ik}$
+
+`Lets goto M step`
+
+$$
+\sum_{i}^N\sum_{j}^k q(z_{i} = j) log(\frac{P(X = x_{i}, z_{i} = j | \theta)}{q(z_{i} = j)})
+$$
+
+$$
+\sum_{i}^N\sum_{j}^k q(z_{i} = j) log(P(X = x_{i}, z_{i} = j | \theta)
+$$
+$q(z_{i} = j)$ doesn't depend on $\theta$
+
+
+
 
 ## Probablistic PCA
 
