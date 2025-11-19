@@ -81,7 +81,15 @@ We will solve for optimal $\theta^{t}$ by usual MLE estimation, thus M step give
 
 # Use case
 
+Lets try to understand GMM, K-means and Probablitic PCA using the above setup.
+
 ## Gaussian Mixture Model
+
+
+## Probablistic PCA
+
+
+## K - Means
 
 ### Problem Defnition
 
