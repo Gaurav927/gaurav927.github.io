@@ -58,22 +58,32 @@ $$
 
 ## E Step
 $\mathbb{KL}$ is always greater than or equal to zero, the tighter bound will happend when 
-$q_{i}(z_{i})$ = $p(z_{i} | \theta, x_{i})$, this is $\bold{E}$ step of EM algorithm
-
-$$
-L(\theta, q_{i}) =  \log p(x_{i}|\theta)
-$$
+$q_{i}(z_{i})$ = $p(z_{i} | \theta, x_{i})$, this is E step of EM algorithm
 
 
-$$
-L(\theta) =  \sum_{i}^N\log p(x_{i}|\theta)
-$$
 
 ## M Step
 
-Let us try to find the optimal value of $\theta$ at iteration t. Lets represent it by $\theta^t$.
+Let us try to find the optimal value of $\theta$ at iteration t. Lets represent it by $\theta^t$. Putting the value of $\theta^t$, we get
+
+$$
+L(\theta^{t}, q_{i}) =  \log p(x_{i}|\theta^{t})
+$$
 
 
+$$
+L(\theta^{t}) =  \sum_{i}^N\log p(x_{i}|\theta^{t})
+$$
+
+We will solve for optimal $\theta^{t}$ by usual MLE estimation, thus M step give us $\theta^{t}$
+
+
+
+# Use case
+
+## Gaussian Mixture Model
+
+### Problem Defnition
 
 
 
