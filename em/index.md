@@ -111,7 +111,11 @@ $$
 $$
 P(X = x_{i}, z_{i} = j) = P(X=x_{i}| \theta, z_{i} = j)P(z_{i} = j| \theta, x_{i})
 $$
+
+
 `Using Jensen inequalities`
+
+
 $$
 \sum_{i}^N\sum_{j}^k q(z_{i} = j) log(\frac{P(X = x_{i}, z_{i} = j | \theta)}{q(z_{i} = j)})
 $$
