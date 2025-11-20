@@ -147,7 +147,14 @@ $$
 $$
 \sum_{i}^N\sum_{j}^k q(z_{i} = j) log(P(X = x_{i}, z_{i} = j | \theta)
 $$
+
+
 $q(z_{i} = j)$ doesn't depend on $\theta$
+
+$$
+\sum_{i}^N\sum_{j}^k \gamma_{ij} log(P(X = x_{i}, z_{i} = j | \theta)
+$$
+
 
 
 
