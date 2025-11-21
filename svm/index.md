@@ -37,4 +37,27 @@ $$
 max \left(\frac{1}{|w|}\right)
 $$
 
+
+## The Optimization Problem
+
 If we maximize the distance between nearest point, we will get maximum margin classifier.
+
+this is same as minimizing \
+$|w|$ or $w^t w$
+such that |$w^{T}$ $x_{n}$ + b| = 1
+
+
+formally, we can write minimzation problem
+
+
+$$
+\frac{1}{2}\left( w^tw \right) \
+$$
+
+such that 
+
+$$
+y_{n}(w^tx_{n} + b) \ge 1
+$$
+
+
