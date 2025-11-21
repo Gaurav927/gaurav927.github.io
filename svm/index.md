@@ -51,7 +51,7 @@ formally, we can write minimzation problem
 
 
 $$
-\frac{1}{2}( w^tw ) \
+\frac{1}{2}( w^tw )
 $$
 
 such that 
@@ -60,7 +60,7 @@ $$
 y_{n}(w^tx_{n} + b) \ge 1
 $$
 
-`Using Langrange Multiplier`
+`Using Langrange Multiplier` \
 this can be written as 
 
 $$
