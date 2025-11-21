@@ -155,6 +155,12 @@ $$
 \sum_{i}^N\sum_{j}^k \gamma_{ij} log(P(X = x_{i}, z_{i} = j | \theta)
 $$
 
+$$
+\sum_{i}^N\sum_{j}^k \gamma_{ij} \left[k\pi (x-\mu)\Sigma^{-1}(x-\mu)\right]
+$$
+
+
+
 
 
 
