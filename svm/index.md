@@ -60,4 +60,54 @@ $$
 y_{n}(w^tx_{n} + b) \ge 1
 $$
 
+`Using Langrange Multiplier`
+this can be written as 
+
+$$
+\implies \frac{1}{2}\left( w^tw \right) \  - \sum_{i}^n \alpha_{i}\left[ y_{i}(w^tx_{i} + b)- 1 \right]
+$$
+subject to $\alpha_{i} \ge 0$
+
+Lets take derivative w.r.t paramters L($\alpha$, w, b)
+
+$$
+\frac{\partial{L}}{\partial{b}} = \sum_{i}^n\alpha_{i}y_{i}
+$$
+
+$$
+\frac{\partial{L}}{\partial{\alpha_{i}}} = y_{i}(w^tx_{i} + b)- 1
+$$
+
+$$
+\frac{\partial{L}}{\partial{w}} = w - \sum_{i}^n \alpha_{i}y_{i}x_{i}
+$$
+
+For Optimal parameter, each derivative should be zero
+
+$$
+w = \sum_{i}^n \alpha_{i}y_{i}x_{i}
+$$
+
+$$
+ \sum_{i}^n\alpha_{i}y_{i} = 0
+$$
+
+
+Putting values of above two eqn in Loss function
+
+$$
+\implies \frac{1}{2}\left( w^tw \right) \  - \sum_{i}^n \alpha_{i}\left[ y_{i}(w^tx_{i} + b)- 1 \right]
+$$
+
+$$
+\implies \frac{1}{2}\left( w^tw \right) \  - \sum_{i}^n \alpha_{i}\left[ y_{i}(w^tx_{i} + b)- 1 \right]
+$$
+
+
+$$
+\implies \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}x_{i}x_{j}
+$$
+
+
+
 
