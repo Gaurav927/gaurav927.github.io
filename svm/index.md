@@ -17,3 +17,24 @@ $w^{T}$ x' + b = 0 \
 $w^{T}$ x'' + b = 0
 
 $w^{T}$(x' - x'') = 0
+
+## Distance between $x_{n}$ and plane 
+
+Lets define unit vector, the purpose of unit normal vector is to get perpendicular distance between plane and $x_{n}$
+$$
+\hat{w} = \frac{w}{|w|}
+$$
+
+$$
+\frac{w^{t}(x_{n} - x')}{|w|}
+$$
+
+$$
+\frac{w^{t}(x_{n} + b - x' - b)}{|w|}
+$$
+
+$$
+max \left(\frac{1}{|w|}\right)
+$$
+
+If we maximize the distance between nearest point, we will get maximum margin classifier.
