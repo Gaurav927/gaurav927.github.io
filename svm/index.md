@@ -51,7 +51,7 @@ formally, we can write minimzation problem
 
 
 $$
-\frac{1}{2}\left( w^tw \right) \
+\frac{1}{2}( w^tw ) \
 $$
 
 such that 
@@ -107,6 +107,10 @@ $$
 $$
 \implies \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}x_{i}x_{j}
 $$
+
+$\alpha_{i} \ge 0$
+
+
 
 
 
