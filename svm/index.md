@@ -144,6 +144,17 @@ $$
 
 
 
+$$
+\alpha_{i}\left[ y_{i}(w^tx_{i} + b)- 1 \right] \ge 0
+$$
+
+for support vectors
+$$
+\alpha_{i} >0 
+$$
+
+Only support vectors define the margin, rest doesn't contribute to the plane
+
 
 
 
