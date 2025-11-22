@@ -48,7 +48,7 @@ such that |$w^{T}$ $x_{n}$ + b| = 1
 
 formally, we can write minimzation problem
 ## The Optimization Problem (Hard Margin)
-
+`Primal Problem`
 $$
 \frac{1}{2}( w^tw )
 $$
@@ -92,7 +92,8 @@ $$
 $$
 
 
-Putting values of above two eqn in Loss function
+Putting values of above two eqn in Loss function \
+`Dual Problem`
 
 $$
 \implies \frac{1}{2}\left( w^tw \right) \  - \sum_{i}^n \alpha_{i}\left[ y_{i}(w^tx_{i} + b)- 1 \right]
@@ -179,7 +180,7 @@ $$
 
 The constraints remains same,
 
-## Generalized ineer Product
+## Generalized inner Product
 
 Let's look at the beauty of Z transformation.
 $$
@@ -205,7 +206,7 @@ rest everything remains same.
 
 
 ## The Optimization Problem (Soft Margin)
-
+`Primal Problem`
 
 $$
 \begin{aligned}
@@ -257,7 +258,7 @@ $$
 
 these cancel each other, this is the final form we are getting
 
-
+`Dual Problem`
 $$
 \begin{aligned}
 \text{Maximize} \quad & \mathcal{L}(\boldsymbol{\alpha}) = \sum_{n=1}^{N} \alpha_n - \frac{1}{2} \sum_{n=1}^{N} \sum_{m=1}^{N} y_n y_m \alpha_n \alpha_m \mathbf{x}_n^\top \mathbf{x}_m \quad \text{w.r.t. to } \boldsymbol{\alpha} \\[1em]
