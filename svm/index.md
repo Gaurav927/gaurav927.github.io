@@ -205,15 +205,19 @@ rest everything remains same.
 
 
 ## The Optimization Problem (Soft Margin)
+
+
+$$
+\begin{aligned}
+\text{Minimize} \quad & \frac{1}{2} \mathbf{w}^\top \mathbf{w} + \color{red}{C \sum_{n=1}^{N} \xi_n} \\[1em]
+\text{subject to} \quad & y_n (\mathbf{w}^\top \mathbf{x}_n + b) \geq 1 \color{red}{- \xi_n} \quad \text{for } n = 1, \dots, N \\[1em]
+\text{and} \quad & \color{red}{\xi_n \geq 0} \quad \text{for } n = 1, \dots, N \\[1em]
+& \mathbf{w} \in \mathbb{R}^d, \quad b \in \mathbb{R}, \quad \color{red}{\boldsymbol{\xi} \in \mathbb{R}^N}
+\end{aligned}
 $$
 
-\begin{align*}
-    & \text{Minimize} \quad && \frac{1}{2} \mathbf{w}^\top \mathbf{w} + \textcolor{brickred}{C \sum_{n=1}^{N} \xi_n} \\[1em]
-    & \text{subject to} \quad && y_n (\mathbf{w}^\top \mathbf{x}_n + b) \geq 1 \textcolor{brickred}{- \xi_n} \quad \text{for} \quad n = 1, \dots, N \\[1em]
-    & \text{and} \quad && \textcolor{brickred}{\xi_n \geq 0} \quad \text{for} \quad n = 1, \dots, N \\[1em]
-    & && \mathbf{w} \in \mathbb{R}^d ~, \quad b \in \mathbb{R} ~, \quad \textcolor{brickred}{\boldsymbol{\xi} \in \mathbb{R}^N}
-\end{align*}
-$$
+
+
 
 
 We are trying to minimize the total voilations as well as maximize the margin by minimizing the w 
