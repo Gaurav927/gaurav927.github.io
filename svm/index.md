@@ -110,7 +110,37 @@ $$
 
 $\alpha_{i} \ge 0$         and         $\sum_{i}^n \alpha_{i} y_{i}$ = 0
 
+this is a function of α only
 
+This can be written as quadratic programming
+
+$$
+
+
+
+\min_{\textcolor{blue}{\boldsymbol{\alpha}}}
+\frac{1}{2} \textcolor{blue}{\boldsymbol{\alpha}}^\top
+    
+    \begin{bmatrix}
+        y_1 y_1 \mathbf{x}_1^\top \mathbf{x}_1 & y_1 y_2 \mathbf{x}_1^\top \mathbf{x}_2 & \dots & y_1 y_N \mathbf{x}_1^\top \mathbf{x}_N \\
+        y_2 y_1 \mathbf{x}_2^\top \mathbf{x}_1 & y_2 y_2 \mathbf{x}_2^\top \mathbf{x}_2 & \dots & y_2 y_N \mathbf{x}_2^\top \mathbf{x}_N \\
+        \dots & \dots & \dots & \dots \\
+        y_N y_1 \mathbf{x}_N^\top \mathbf{x}_1 & y_N y_2 \mathbf{x}_N^\top \mathbf{x}_2 & \dots & y_N y_N \mathbf{x}_N^\top \mathbf{x}_N
+    \end{bmatrix}
+    \textcolor{blue}{\boldsymbol{\alpha}} + 
+    \underbrace{(-\mathbf{1}^\top)}_{\text{linear}} \textcolor{blue}{\boldsymbol{\alpha}} \\
+
+$$
+
+$$
+\text{subject to} \quad 
+\underbrace{\mathbf{y}^\top \textcolor{blue}{\boldsymbol{\alpha}} = 0}_{\text{linear constraint}} \\
+
+$$
+
+$$
+\underbrace{\mathbf{0}}_{\text{lower bounds}} \le \textcolor{blue}{\boldsymbol{\alpha}} \le \underbrace{\boldsymbol{\infty}}_{\text{upper bounds}}
+$$
 
 
 
