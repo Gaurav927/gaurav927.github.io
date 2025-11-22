@@ -215,4 +215,24 @@ $$
 
 $$
 
+We are trying to minimize the total voilations as well as maximize the margin by minimizing the w 
+
 <img src="./image copy.png" alt="drawing" width="500"/>
+
+
+$$
+\begin{align*}
+\text{\textbf{\Large Lagrange formulation}} \\[1em]
+\mathcal{L}(\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\beta}) &= 
+\frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{n=1}^N \xi_n 
+- \sum_{n=1}^N \alpha_n (y_n (\mathbf{w}^\top \mathbf{x}_n + b) - 1 + \xi_n) 
+- \sum_{n=1}^N \beta_n \xi_n \\[1em]
+\text{Minimize w.r.t. } \mathbf{w}, b, \text{ and } \boldsymbol{\xi} & \text{ and maximize w.r.t. each } \alpha_n \geq 0 \text{ and } \beta_n \geq 0 \\[2em]
+\frac{\partial \mathcal L}{\partial w} &= \mathbf{w} - \sum_{n=1}^N \alpha_n y_n \mathbf{x}_n = \mathbf{0} \\
+\frac{\partial \mathcal{L}}{\partial b} &= - \sum_{n=1}^N \alpha_n y_n = 0 \\
+\frac{\partial \mathcal{L}}{\partial \xi_n} &= C - \alpha_n - \beta_n = 0
+\end{align*}
+$$
+
+
+Putting these values in our $\mathcal{L}(\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\beta})$
