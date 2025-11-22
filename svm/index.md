@@ -160,9 +160,23 @@ w = \sum_{sv}\alpha_{i}y_{i}x_{i}
 $$
 
 
+
+
+This is important result between out of sample error rate and the number of support vectors, lower the number of support vectors, better the model.
+This is the main reason SVM was very famous pre deep learning era, since it gurantees the error. this is geometric gurantee that model is not overfitting.
+$$
+\mathbb{E}[E_{\text{out}}] \leq \frac{\mathbb{E}[\# \text{ of SV's}]}{N - 1}
+$$
+
+
 Suppose we do a non linear transformation on x 
 
 $$
 L(\alpha) = \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}z_{i}z_{j}
 $$
+
+The constraints remains same
+
+
+
 
