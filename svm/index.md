@@ -175,7 +175,7 @@ $$
 Suppose we do a non linear transformation on x 
 
 $$
-L(\alpha) = \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}z_{i}z_{j}
+Maximize \quad L(\alpha) = \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}z_{i}z_{j}
 $$
 
 The constraints remains same,
@@ -267,6 +267,10 @@ $$
 & \text{minimizes} \quad \frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{n=1}^{N} \xi_n
 \end{aligned}
 $$
+
+## Conclusion
+We derived the Quardratic form for both SVM (soft and hard margin), the only difference is bound on α 
+
 
 ## Reference
 
