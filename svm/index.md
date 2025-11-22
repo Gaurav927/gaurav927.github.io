@@ -38,7 +38,6 @@ max \left(\frac{1}{|w|}\right)
 $$
 
 
-## The Optimization Problem
 
 If we maximize the distance between nearest point, we will get maximum margin classifier.
 
@@ -202,3 +201,18 @@ $$
 $$
 
 rest everything remains same.
+
+
+
+## The Optimization Problem (Soft Margin)
+$$
+\begin{align*}
+    & \text{Minimize} \quad && \frac{1}{2} \mathbf{w}^\top \mathbf{w} + \textcolor{brickred}{C \sum_{n=1}^{N} \xi_n} \\[1em]
+    & \text{subject to} \quad && y_n (\mathbf{w}^\top \mathbf{x}_n + b) \geq 1 \textcolor{brickred}{- \xi_n} \quad \text{for} \quad n = 1, \dots, N \\[1em]
+    & \text{and} \quad && \textcolor{brickred}{\xi_n \geq 0} \quad \text{for} \quad n = 1, \dots, N \\[1em]
+    & && \mathbf{w} \in \mathbb{R}^d ~, \quad b \in \mathbb{R} ~, \quad \textcolor{brickred}{\boldsymbol{\xi} \in \mathbb{R}^N}
+\end{align*}
+
+$$
+
+<img src="./image copy.png" alt="drawing" width="500"/>
