@@ -47,7 +47,7 @@ such that |$w^{T}$ $x_{n}$ + b| = 1
 
 
 formally, we can write minimzation problem
-
+## The Optimization Problem (Hard Margin)
 
 $$
 \frac{1}{2}( w^tw )
@@ -266,3 +266,7 @@ $$
 & \text{minimizes} \quad \frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{n=1}^{N} \xi_n
 \end{aligned}
 $$
+
+## Reference
+
+[https://www.work.caltech.edu/lectures.html](https://www.work.caltech.edu/lectures.html)
