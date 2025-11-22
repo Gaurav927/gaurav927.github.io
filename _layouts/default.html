@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.github.repository_name }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title | default: site.github.repository_name }}</title>
     {% if site.description %}
     <meta name="description" content="{{ site.description }}">
     {% endif %}
@@ -12,11 +12,11 @@
     
     <style>
       :root {
-        --bg-color: #a9bdd0; /* Usually a gradient in the body */
+        --bg-color: #f8fafc; /* Usually a gradient in the body */
       --text-color: #1e293b;
       --heading-color: #0f172a;
       --primary-color: #3b82f6;
-      --accent-color: #142a4d;
+      --accent-color: #1e293b;
       --card-bg: rgba(255, 255, 255, 0.7);
       --border-radius: 16px;
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
@@ -36,7 +36,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(to right bottom, #a9bdd0, #e2e8f0);
+        background-image: linear-gradient(to right bottom, #f8fafc, #e2e8f0);
       }
 
       a {
@@ -192,13 +192,14 @@
       
       th, td {
         padding: 0.75rem;
-        border: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0,0,0,0.1);
         text-align: left;
       }
       
       th {
-        background: rgba(0,0,0,0.03);
+        background: transparent; /* Removed background to prevent header look for accidental tables */
         font-weight: 600;
+        border-bottom: 2px solid rgba(0,0,0,0.1);
       }
 
       footer {
@@ -245,7 +246,10 @@
     <!-- MathJax for nice math rendering -->
     <script>
     window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+      tex: { 
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }
     };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
