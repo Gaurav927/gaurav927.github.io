@@ -206,6 +206,9 @@ rest everything remains same.
 
 
 ## The Optimization Problem (Soft Margin)
+
+<img src="./image copy.png" alt="drawing" width="500"/>
+
 `Primal Problem`
 
 $$
@@ -223,7 +226,7 @@ $$
 
 We are trying to minimize the total voilations as well as maximize the margin by minimizing the w 
 
-<img src="./image copy.png" alt="drawing" width="500"/>
+
 
 
 `Lagrange formulation`
