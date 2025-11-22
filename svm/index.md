@@ -255,4 +255,14 @@ $$
 $$
 
 
-these cancel each other
+these cancel each other, this is the final form we are getting
+
+
+$$
+\begin{aligned}
+\text{Maximize} \quad & \mathcal{L}(\boldsymbol{\alpha}) = \sum_{n=1}^{N} \alpha_n - \frac{1}{2} \sum_{n=1}^{N} \sum_{m=1}^{N} y_n y_m \alpha_n \alpha_m \mathbf{x}_n^\top \mathbf{x}_m \quad \text{w.r.t. to } \boldsymbol{\alpha} \\[1em]
+\text{subject to} \quad & 0 \leq \alpha_n \leq C \quad \text{for } n = 1, \cdots, N \quad \text{and} \quad \sum_{n=1}^{N} \alpha_n y_n = 0 \\[2em]
+& \implies \mathbf{w} = \sum_{n=1}^{N} \alpha_n y_n \mathbf{x}_n \\[1em]
+& \text{minimizes} \quad \frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{n=1}^{N} \xi_n
+\end{aligned}
+$$
