@@ -206,14 +206,15 @@ rest everything remains same.
 
 ## The Optimization Problem (Soft Margin)
 $$
+
 \begin{align*}
     & \text{Minimize} \quad && \frac{1}{2} \mathbf{w}^\top \mathbf{w} + \textcolor{brickred}{C \sum_{n=1}^{N} \xi_n} \\[1em]
     & \text{subject to} \quad && y_n (\mathbf{w}^\top \mathbf{x}_n + b) \geq 1 \textcolor{brickred}{- \xi_n} \quad \text{for} \quad n = 1, \dots, N \\[1em]
     & \text{and} \quad && \textcolor{brickred}{\xi_n \geq 0} \quad \text{for} \quad n = 1, \dots, N \\[1em]
     & && \mathbf{w} \in \mathbb{R}^d ~, \quad b \in \mathbb{R} ~, \quad \textcolor{brickred}{\boldsymbol{\xi} \in \mathbb{R}^N}
 \end{align*}
-
 $$
+
 
 We are trying to minimize the total voilations as well as maximize the margin by minimizing the w 
 
@@ -230,9 +231,26 @@ $$
 \text{Minimize w.r.t. } \mathbf{w}, b, \text{ and } \boldsymbol{\xi} & \text{ and maximize w.r.t. each } \alpha_n \geq 0 \text{ and } \beta_n \geq 0 \\[2em]
 \frac{\partial \mathcal L}{\partial w} &= \mathbf{w} - \sum_{n=1}^N \alpha_n y_n \mathbf{x}_n = \mathbf{0} \\
 \frac{\partial \mathcal{L}}{\partial b} &= - \sum_{n=1}^N \alpha_n y_n = 0 \\
-\frac{\partial \mathcal{L}}{\partial \xi_n} &= C - \alpha_n - \beta_n = 0
+\frac{\partial \mathcal{L}}{\partial \xi_n} &= C - \alpha_n - \beta_n = 0 \\
+
+\frac{\partial{L}}{\partial{\alpha_{i}}} &= y_{i}(w^tx_{i} + b)- 1
+
 \end{align*}
+
 $$
 
 
 Putting these values in our $\mathcal{L}(\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\beta})$
+
+Look at 
+
+$$
+\sum_{n=1}^N C\xi_n - \sum_{n=1}^N \alpha_n \xi_n -\sum_{n=1}^N\beta_{n}\xi_n
+$$
+
+$$
+ \sum_{n=1}^N \alpha_n y_{n} b
+$$
+
+
+these cancel each other
