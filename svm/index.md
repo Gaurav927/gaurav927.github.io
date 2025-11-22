@@ -225,9 +225,10 @@ We are trying to minimize the total voilations as well as maximize the margin by
 <img src="./image copy.png" alt="drawing" width="500"/>
 
 
+`Large Lagrange formulation`
+
 $$
 \begin{gather*}
-\text{\textbf{\Large Lagrange formulation}} \\[1em]
 \mathcal{L}(\mathbf{w}, b, \boldsymbol{\xi}, \boldsymbol{\alpha}, \boldsymbol{\beta}) = 
 \frac{1}{2} \mathbf{w}^\top \mathbf{w} + C \sum_{n=1}^N \xi_n 
 - \sum_{n=1}^N \alpha_n (y_n (\mathbf{w}^\top \mathbf{x}_n + b) - 1 + \xi_n) 
