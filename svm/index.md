@@ -153,8 +153,16 @@ $$
 \alpha_{i} >0 
 $$
 
-Only support vectors define the margin, rest doesn't contribute to the plane
+Only support vectors define the margin, rest doesn't contribute to the decision boundary.
+
+$$
+w = \sum_{sv}\alpha_{i}y_{i}x_{i}
+$$
 
 
+Suppose we do a non linear transformation on x 
 
+$$
+L(\alpha) = \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}z_{i}z_{j}
+$$
 
