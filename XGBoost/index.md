@@ -116,7 +116,7 @@ Where:
 
 ### Taylor Series Approximation
 
-The paper usage  a **second-order Taylor expansion** of the loss around $\hat{y}_i^{(t-1)}$
+The paper uses a second-order Taylor expansion, the loss around $\hat{y}_i^{(t-1)}$
 We will come to understand why the 2nd-order approximation is a better choice during the derivation and what can happen if we use a higher-degree approximation..
 
 **General Taylor Expansion:**
