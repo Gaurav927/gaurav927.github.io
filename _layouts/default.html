@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title | default: site.github.repository_name }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.github.repository_name }}</title>
     {% if site.description %}
     <meta name="description" content="{{ site.description }}">
     {% endif %}
@@ -12,14 +12,16 @@
     
     <style>
       :root {
-        --bg-color: #f8fafc; /* Usually a gradient in the body */
+        --bg-color: #9ac2ea; /* Usually a gradient in the body */
       --text-color: #1e293b;
       --heading-color: #0f172a;
-      --primary-color: #3b82f6;
-      --accent-color: #1e293b;
+      --primary-color: #295499;
+      --accent-color: #5d7fb6;
       --card-bg: rgba(255, 255, 255, 0.7);
       --border-radius: 16px;
       --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      --table-head-bg: rgba(255, 255, 255, 0.5);
+      --border-color: rgba(255, 255, 255, 0.3);
       }
 
       * {
@@ -36,7 +38,7 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(to right bottom, #f8fafc, #e2e8f0);
+        background-image: linear-gradient(to right bottom, #9ac2ea, #e2e8f0);
       }
 
       a {
@@ -122,6 +124,13 @@
       li {
         margin-bottom: 0.5rem;
       }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+      }
 
       /* Code Blocks */
       pre {
@@ -192,14 +201,13 @@
       
       th, td {
         padding: 0.75rem;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--border-color);
         text-align: left;
       }
       
       th {
-        background: transparent; /* Removed background to prevent header look for accidental tables */
+        background: var(--table-head-bg);
         font-weight: 600;
-        border-bottom: 2px solid rgba(0,0,0,0.1);
       }
 
       footer {
