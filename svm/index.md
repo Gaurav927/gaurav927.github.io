@@ -108,7 +108,9 @@ $$
 \implies \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}x_{i}x_{j}
 $$
 
-$\alpha_{i} \ge 0$
+$\alpha_{i} \ge 0$         and         $\sum_{i}^n \alpha_{i} y_{i}$ = 0
+
+
 
 
 
