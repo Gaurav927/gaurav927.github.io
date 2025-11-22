@@ -108,8 +108,9 @@ $$
 \implies \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}x_{i}x_{j}
 $$
 
-$\alpha_{i} \ge 0$         and         $\sum_{i}^n \alpha_{i} y_{i}$ = 0
-
+$$
+\alpha_{i} \ge 0    \quad     and     \quad    \sum_{i}^n \alpha_{i} y_{i} = 0
+$$
 this is a function of α only
 
 This can be written as quadratic programming
@@ -164,6 +165,8 @@ $$
 
 This is important result between out of sample error rate and the number of support vectors, lower the number of support vectors, better the model.
 This is the main reason SVM was very famous pre deep learning era, since it gurantees the error. this is geometric gurantee that model is not overfitting.
+
+
 $$
 \mathbb{E}[E_{\text{out}}] \leq \frac{\mathbb{E}[\# \text{ of SV's}]}{N - 1}
 $$
@@ -175,8 +178,15 @@ $$
 L(\alpha) = \sum_{i}^n \alpha_{i} - \frac{1}{2}\sum_{i}^n\sum_{j}^my_{i}y_{j}\alpha_{i}\alpha_{j}z_{i}z_{j}
 $$
 
-The constraints remains same
+The constraints remains same,
 
+## Generalized ineer Product
 
-
-
+Let's look at the beauty of Z transformation.
+$$
+\begin{align*}
+    \textcolor{myviolet}{\mathbf{z}} &= \Phi(\mathbf{x}) = (1, x_1, x_2, x_1^2, x_2^2, x_1 x_2) \\[1.5em]
+    K(\mathbf{x}, \mathbf{x}') &= \textcolor{myviolet}{\mathbf{z}}^\top \textcolor{myviolet}{\mathbf{z}}' = 1 + x_1 x'_1 + x_2 x'_2 + {} \\
+    &\quad \quad \quad \quad \quad \quad x_1^2 {x'_1}^2 + x_2^2 {x'_2}^2 + x_1 x'_1 x_2 x'_2
+\end{align*}
+$$
