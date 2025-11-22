@@ -225,7 +225,7 @@ We are trying to minimize the total voilations as well as maximize the margin by
 <img src="./image copy.png" alt="drawing" width="500"/>
 
 
-`Large Lagrange formulation`
+`Lagrange formulation`
 
 $$
 \begin{gather*}
