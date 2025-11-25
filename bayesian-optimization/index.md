@@ -104,7 +104,7 @@ p(y_{1} | x_{1}, x_{2}, y_{2}) \thicksim N(\mu_{1|2}, \Sigma_{2|1})
 $$
 
 $$
-\mu_{1|2} \quad=\quad \mu_{2} \quad + \quad \Sigma_{21}\Sigma^{-1}_{11}(y_{1} - \mu_{1})
+\mu_{1|2} =\quad \mu_{2}  + \Sigma_{21}\Sigma^{-1}_{11}(y_{1} - \mu_{1})
 $$
 
 $$
