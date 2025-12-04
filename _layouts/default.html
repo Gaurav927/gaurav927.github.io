@@ -3,241 +3,207 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: site.github.repository_name }}</title>
-    {% if site.description %}
-    <meta name="description" content="{{ site.description }}">
-    {% endif %}
+    
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title | default: "My Site" }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    {% if site.github %}<meta property="og:image" content="{{ site.github.owner_avatar_url }}">{% endif %}
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/atom-one-dark.min.css">
     
     <style>
+      /* --- THEME VARIABLES --- */
       :root {
-        --bg-color: #9ac2ea; /* Usually a gradient in the body */
-      --text-color: #1e293b;
-      --heading-color: #0f172a;
-      --primary-color: #295499;
-      --accent-color: #5d7fb6;
-      --card-bg: rgba(255, 255, 255, 0.7);
-      --border-radius: 16px;
-      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-      --table-head-bg: rgba(255, 255, 255, 0.5);
-      --border-color: rgba(255, 255, 255, 0.3);
+        /* Light Mode (Default) */
+        --bg-gradient: linear-gradient(to right bottom, #9ac2ea, #e2e8f0);
+        --text-color: #1e293b;
+        --heading-color: #0f172a;
+        --primary-color: #2563eb;
+        --accent-color: #3b82f6;
+        --card-bg: rgba(255, 255, 255, 0.75);
+        --nav-bg: rgba(255, 255, 255, 0.6);
+        --border-color: rgba(255, 255, 255, 0.4);
+        --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+        --code-bg: #1e293b;
+        --toggle-icon: "\f185"; /* Sun icon */
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      [data-theme="dark"] {
+        /* Dark Mode */
+        --bg-gradient: linear-gradient(to right bottom, #0f172a, #1e293b);
+        --text-color: #cbd5e1;
+        --heading-color: #f8fafc;
+        --primary-color: #60a5fa;
+        --accent-color: #93c5fd;
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --nav-bg: rgba(15, 23, 42, 0.6);
+        --border-color: rgba(255, 255, 255, 0.08);
+        --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        --code-bg: #020617;
+        --toggle-icon: "\f186"; /* Moon icon */
       }
 
+      /* --- RESET & BASE --- */
+      * { box-sizing: border-box; margin: 0; padding: 0; transition: background 0.3s, color 0.3s; }
+      
       body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: var(--bg-color);
+        font-family: 'Inter', sans-serif;
+        background-image: var(--bg-gradient);
+        background-attachment: fixed; /* Keeps gradient nicely fixed on scroll */
         color: var(--text-color);
         line-height: 1.8;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(to right bottom, #9ac2ea, #e2e8f0);
       }
 
-      a {
-        color: var(--primary-color);
-        text-decoration: none;
-        transition: color 0.2s ease, border-bottom-color 0.2s ease;
-        border-bottom: 1px solid transparent;
-      }
+      a { color: var(--primary-color); text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
+      a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
 
-      a:hover {
-        color: var(--accent-color);
-        border-bottom-color: var(--accent-color);
-      }
-
-      /* Header */
+      /* --- HEADER & NAV --- */
       header {
-        background: transparent;
-      color: var(--heading-color);
-      padding: 3rem 2rem;
-      text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        letter-spacing: -0.025em;
-        line-height: 1.2;
-        margin-bottom: 0.5rem;
+        padding: 2rem 1.5rem 1rem;
+        text-align: center;
+        position: relative;
+        z-index: 20;
       }
       
-      header h1 a {
-        color: inherit;
-        border: none;
+      .site-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
+        color: var(--heading-color);
+        display: inline-block;
       }
+      
+      .site-tagline { opacity: 0.8; font-size: 1.05rem; margin-bottom: 1.5rem; }
 
-      header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto;
-        
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        font-weight: 500;
       }
+      
+      nav a { color: var(--heading-color); opacity: 0.8; border: none; }
+      nav a:hover { opacity: 1; transform: translateY(-1px); }
 
-      /* Main Content */
+      /* --- MAIN CARD --- */
       main {
         flex: 1;
         width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 860px;
+        margin: 1rem auto 3rem;
         background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 2.5rem;
-        position: relative;
-        z-index: 10;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        padding: 3rem;
+        animation: fadeIn 0.6s ease-out;
       }
 
-      /* Typography */
-      h1, h2, h3, h4, h5, h6 {
-        color: var(--heading-color);
-        font-weight: 700;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        line-height: 1.3;
-      }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-      h1 { font-size: 2.25rem; }
-      h2 { font-size: 1.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
-      h3 { font-size: 1.5rem; }
+      /* --- TYPOGRAPHY --- */
+      h1, h2, h3, h4 { color: var(--heading-color); font-weight: 700; margin-top: 2.5rem; line-height: 1.25; }
+      h1 { font-size: 2.25rem; margin-top: 0; }
+      h2 { font-size: 1.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1.5rem; }
+      p, ul, ol { margin-bottom: 1.5rem; }
+      li { margin-bottom: 0.5rem; }
+      img { max-width: 100%; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+      blockquote { border-left: 4px solid var(--primary-color); padding: 0.8rem 1.5rem; background: rgba(0,0,0,0.03); border-radius: 0 8px 8px 0; font-style: italic; }
 
-      p {
-        margin-bottom: 1.5rem;
-      }
-
-      ul, ol {
-        margin-bottom: 1.5rem;
-        padding-left: 1.5rem;
-      }
-      
-      li {
-        margin-bottom: 0.5rem;
-      }
-      
-      img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin: 1.5rem 0;
-      }
-
-      /* Code Blocks */
+      /* --- CODE BLOCKS --- */
       pre {
-        background: #1e293b;
+        background: var(--code-bg) !important;
         color: #e2e8f0;
-        padding: 1.25rem;
-        border-radius: 8px;
+        padding: 3.5rem 1.5rem 1.5rem; /* Top padding for Mac dots */
+        border-radius: 12px;
         overflow-x: auto;
         margin: 2rem 0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         position: relative;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
       }
       
-      /* Mac-style window dots for code blocks */
+      /* Mac Window Dots */
       pre::before {
         content: "• • •";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 24px;
-        background: #0f172a;
+        top: 0; left: 0;
+        width: 100%; height: 40px;
+        background: rgba(255,255,255,0.05);
         color: #64748b;
-        font-size: 24px;
-        line-height: 16px;
-        padding-left: 14px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        letter-spacing: 2px;
-        display: flex;
-        align-items: center;
-      }
-
-      pre code {
-        display: block;
-        padding-top: 20px; /* Space for the header */
-        background: transparent;
-        font-family: 'Fira Code', monospace;
-        font-size: 0.9em;
-      }
-
-      /* Inline Code */
-      :not(pre) > code {
-        background: rgba(0,0,0,0.06);
-        color: #be185d;
-        padding: 0.2em 0.4em;
-        border-radius: 4px;
-        font-family: 'Fira Code', monospace;
-        font-size: 0.85em;
-      }
-
-      blockquote {
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem 1.5rem;
-        margin: 2rem 0;
-        background: rgba(0,0,0,0.02);
-        border-radius: 0 8px 8px 0;
-        font-style: italic;
-        color: #475569;
-      }
-
-      /* Tables */
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 2rem 0;
+        font-size: 32px;
+        line-height: 22px;
+        padding-left: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        display: flex; align-items: center; letter-spacing: 4px;
       }
       
-      th, td {
-        padding: 0.75rem;
-        border-bottom: 1px solid var(--border-color);
-        text-align: left;
+      /* Copy Button */
+      .copy-btn {
+        position: absolute; top: 8px; right: 12px;
+        background: rgba(255,255,255,0.1);
+        border: none; color: #94a3b8;
+        padding: 4px 10px; border-radius: 6px;
+        font-size: 0.75rem; cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.2s;
       }
+      .copy-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+
+      code { font-family: 'Fira Code', monospace; font-size: 0.9em; }
+      :not(pre) > code { background: rgba(125, 125, 125, 0.15); color: #be185d; padding: 0.2em 0.4em; border-radius: 6px; }
+      [data-theme="dark"] :not(pre) > code { color: #f472b6; }
+
+      /* --- DARK MODE TOGGLE --- */
+      .theme-toggle {
+        position: fixed; top: 20px; right: 20px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem;
+        color: var(--heading-color);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 100;
+      }
+      .theme-toggle::after { content: var(--toggle-icon); font-family: "Font Awesome 6 Free"; font-weight: 900; }
+
+      /* --- FOOTER --- */
+      footer { text-align: center; padding: 2rem; opacity: 0.7; font-size: 0.9rem; }
       
-      th {
-        background: var(--table-head-bg);
-        font-weight: 600;
-      }
-
-      footer {
-        text-align: center;
-        padding: 3rem 1rem;
-        color: #64748b;
-        font-size: 0.9rem;
-        margin-top: auto;
-      }
-
-      /* Mobile */
       @media (max-width: 768px) {
-        header {
-          padding: 3rem 1.5rem;
-          clip-path: none;
-        }
-        main {
-          margin-top: 0;
-          border-radius: 0;
-          box-shadow: none;
-          padding: 1.5rem;
-        }
+        main { border-radius: 0; margin: 0; border: none; padding: 2rem 1.5rem; }
+        header { padding: 3rem 1.5rem 1rem; }
+        .theme-toggle { top: 15px; right: 15px; width: 38px; height: 38px; }
       }
     </style>
   </head>
 
   <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode"></button>
+
     <header>
-      <h1><a href="{{ '/' | relative_url }}">{{ site.title | default: "Your Site" }}</a></h1>
-      {% if site.tagline %}<p>{{ site.tagline }}</p>{% endif %}
+      <h1><a href="{{ '/' | relative_url }}" class="site-title">{{ site.title | default: "My Digital Garden" }}</a></h1>
+      {% if site.tagline %}<p class="site-tagline">{{ site.tagline }}</p>{% endif %}
+      
+      <nav>
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="https://github.com/{{ site.github.username }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
     </header>
 
     <main>
@@ -245,19 +211,52 @@
     </main>
 
     <footer>
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title | default: "" }}. Powered by GitHub Pages.</p>
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. <br>Powered by <a href="https://jekyllrb.com">Jekyll</a> & GitHub Pages.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+      // 1. Syntax Highlighting
+      hljs.highlightAll();
+
+      // 2. Dark Mode Logic
+      const toggleBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      
+      // Check local storage or system preference
+      const currentTheme = localStorage.getItem('theme') || 
+                           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      
+      if (currentTheme === 'dark') root.setAttribute('data-theme', 'dark');
+
+      toggleBtn.addEventListener('click', () => {
+        let theme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      });
+
+      // 3. Copy Code Button
+      document.querySelectorAll('pre').forEach((block) => {
+        // Create button
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.innerText = 'Copy';
+        
+        button.addEventListener('click', () => {
+          const code = block.querySelector('code').innerText;
+          navigator.clipboard.writeText(code).then(() => {
+            button.innerText = 'Copied!';
+            setTimeout(() => { button.innerText = 'Copy'; }, 2000);
+          });
+        });
+        
+        block.appendChild(button);
+      });
+    </script>
     
-    <!-- MathJax for nice math rendering -->
     <script>
     window.MathJax = {
-      tex: { 
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        processEscapes: true
-      }
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
     };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
