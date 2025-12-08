@@ -67,4 +67,4 @@ description: Machine Learning Scientist with 6+ years of experience.
 ## Education
 
 **Indian Institute of Technology (IIT), Kharagpur**
-*Bachelor of Technology in Chemical Engineering (2015 – 2019)*
+*Bachelor of Technology (2015 – 2019)*
