@@ -73,9 +73,6 @@ description: Machine Learning Scientist with 6+ years of experience in AI/ML sol
 
 
 
-[Image of BERT model architecture]
-
-
 ---
 
 ## 🏆 Achievements
