@@ -9,7 +9,7 @@ description: Machine Learning Scientist with 6+ years of experience.
 
 > Accomplished Machine Learning Scientist with over 6 years of experience building and deploying high-impact AI/ML solutions. I have a proven track record in using data to drive transformative commercial growth, delivering measurable results in revenue, efficiency, and customer engagement.
 
-[Email](mailto:gauravkr927@gmail.com) • [LinkedIn](https://linkedin.com/in/gauravkr8/) • [GitHub](https://github.com/gaurav927) • [Portfolio](https://gaurav927.github.io/Gaurav927)
+[Email](mailto:gauravkr927@gmail.com) • [LinkedIn](https://linkedin.com/in/gauravkr8/) • [GitHub](https://github.com/gaurav927) • [Portfolio](https://gaurav927.github.io/)
 
 ---
 
