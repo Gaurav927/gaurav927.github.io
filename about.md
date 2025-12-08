@@ -19,6 +19,14 @@ description: Machine Learning Scientist with 6+ years of experience in AI/ML sol
 
 ---
 
+## 🎓 Education
+
+### **Indian Institute of Technology (IIT), Kharagpur**
+**Bachelor of Technology in Chemical Engineering**
+*(2015 – 2019)*
+
+---
+
 ## 💼 Professional Experience
 
 ### **Expedia Group**
@@ -65,15 +73,14 @@ description: Machine Learning Scientist with 6+ years of experience in AI/ML sol
 
 
 
+[Image of BERT model architecture]
+
 
 ---
 
-## 🏆 Achievements & Education
+## 🏆 Achievements
 
 * 🥈 **Gen-AI Innovation:** Secured **2nd place** for using Gen-AI to improve the customer journey for property selection (July 2025).
 * 🚀 **NASA Hackathon:** Secured **9th rank** in Data Science Hackathon hosted by NASA to identify the severity of algal growth in water bodies (Feb 2023).
 * 🏅 **Impactful Guild Award:** Recipient in Dec-22 for the best project positive impact.
 * 🧠 **Publicis Hackathon:** Secured **4th rank** among 50+ teams to build NLP based solution within 10 days.
-
-### **Indian Institute of Technology (IIT), Kharagpur**
-*Bachelor of Technology in Chemical Engineering (2015 – 2019)*
